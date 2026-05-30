@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<meta name="description" content="Cloudflare WARP 导航 - 搭建Cloudflare节点的第一站 - MASQUE.pages.dev">
+	<meta name="keywords" content="Cloudflare, EDT, 优选IP, 优选域名, 免费节点, VLESS, VMess, Trojan, Hysteria2, Tuic, Shadowsocks, Reality, Workers, Pages, Snippets, WARP, v2rayN, Clash, Sing-box, Shadowrocket, NekoBox, Stash, Loon, Surfboard, BPB, CMLiu, YGKKK, zizifn, 真香定律, 网络加速, 科学上网, 翻墙">
+	<meta name="author" content="Cloudflare WARP 导航">
+	<link rel="canonical" href="https://masque.pages.dev/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Cloudflare WARP 导航">
+	<meta property="og:description" content="搭建CF节点的第一站">
+	<meta property="og:url" content="https://masque.pages.dev/">
+	<meta property="og:site_name" content="Cloudflare WARP 导航">
+	<meta name="twitter:title" content="Cloudflare WARP 导航">
+	<meta name="twitter:description" content="搭建CF节点的第一站">	
+    <title>WARP MASQUE 导航 - MASQUE.pages.dev | Cloudflare WARP</title>
+	<style>
+		:root { --bg-color: #0f172a; --card-bg: rgba(30, 41, 59, 0.5); --accent-blue: #3b82f6; --text-main: #f1f5f9; --text-muted: #94a3b8; --border-color: rgba(255, 255, 255, 0.08); --code-bg: rgba(15, 23, 42, 0.5); }
+		* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 600px); background-repeat: no-repeat; color: var(--text-main); line-height: 1.6; padding: 50px 20px; }
+		.container { max-width: 850px; margin: 0 auto; }
+		header { text-align: center; margin-bottom: 50px; }
+		h1 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(to right, #ffffff, var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+		footer { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+		.tips { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
+		section { margin-bottom: 50px; }
+		h2 { font-size: 1.7rem; margin-bottom: 25px; color: #fff; display: flex; align-items: center; padding-top: 25px; }
+		h2::before { content: ""; width: 5px; height: 1.4rem; background: var(--accent-blue); margin-right: 15px; border-radius: 10px; box-shadow: 0 0 15px var(--accent-blue), 0 0 5px rgba(59, 130, 246, 0.5); }
+		.group-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 26px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);}
+		.group-name { font-size: 1.1rem; margin-bottom: 20px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+		.link-row { margin-bottom: 20px; }
+		.link-row:last-child { margin-bottom: 0; }
+		.item-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; width: 100%; }
+		.item-title { font-weight: 700; color: #fff; font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
+		.action-area { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
+		.tag { display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; padding: 0 5px; height: 18px; border-radius: 4px; font-weight: 600; color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.4); line-height: 1; background: rgba(59, 130, 246, 0.1); vertical-align: middle; white-space: nowrap; flex-shrink: 0; }
+		.tag-featured { background-color: var(--accent-blue); color: #fff; border: none; height: 18px; }
+		.tag-date { display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; padding: 0 5px; height: 18px; border-radius: 4px; font-weight: 600; color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.4); line-height: 1; background: rgba(59, 130, 246, 0.1); vertical-align: middle; white-space: nowrap; flex-shrink: 0; }
+		.url-box { flex: 1; background-color: var(--code-bg); padding: 0 16px; height: 42px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; position: relative; min-width: 0; }
+		.url-text { font-family: ui-monospace, SFMono-Regular, Monaco, Consolas, monospace; font-size: 1rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; user-select: all; width: 100%; }
+		.url-text::placeholder { color: var(--text-muted); }
+		.copy-btn, .open-btn { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.4); height: 42px; padding: 0 20px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 700; transition: all 0.3s; white-space: nowrap; display: flex; align-items: center; justify-content: center; text-decoration: none; flex-shrink: 0; }
+		.copy-btn:hover, .open-btn:hover { background: var(--accent-blue); color: #fff; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+		.item-desc { display: block; font-size: 0.8rem; color: #94a3b8; line-height: 1.4; margin: 4px 0 12px 0; font-weight: normal; }      
+		@media (max-width: 600px) { .action-area { flex-direction: column; align-items: stretch; gap: 10px; } .url-box { height: 42px !important; min-height: 42px !important; display: flex !important; align-items: center !important; padding: 0 15px !important; } .open-btn, .copy-btn { height: 42px !important; line-height: 42px !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 0 !important; width: 100% !important; } .url-text { font-size: 0.8rem !important; } }
+		@keyframes glow-breath { 0%, 100% { box-shadow: 0 0 5px #3b82f688; filter: brightness(1); } 50% { box-shadow: 0 0 25px #3b82f6, 0 0 10px #3b82f6; filter: brightness(1.5); } }
+		h2.breath::before { animation: glow-breath 4s ease-in-out infinite !important; }
+		#edt-url-input,#edt-pwd-input,.more-url-input,.more-pwd-input{background:transparent!important;border:none!important;width:100%!important;outline:none!important;color:var(--text-muted)!important;font-family:inherit!important;font-size:14px!important;-webkit-text-fill-color:var(--text-muted)!important;padding-right:28px}#edt-url-input::placeholder,#edt-pwd-input::placeholder,.more-url-input::placeholder,.more-pwd-input::placeholder{color:var(--text-muted)!important;font-size:14px!important;opacity:0.6}.clear-btn-common{color: var(--text-muted);  fill: var(--text-muted); position:absolute;right:8px;top:50%;transform:translateY(-50%);cursor:pointer;display:none;opacity:0.6;line-height:0;transition:opacity .2s;z-index:5}.clear-btn-common:hover{opacity:1}.url-box{flex:1;background-color:var(--code-bg);padding:0 16px;height:42px;border-radius:8px;border:1px solid rgba(255,255,255,.05);display:flex;align-items:center;position:relative}.add-more-btn{margin-top:15px;background:transparent;color:var(--text-muted);border:1px dashed var(--border-color);width:100%;height:40px;border-radius:8px;cursor:pointer;font-size:.85rem;transition:.3s;display:flex;align-items:center;justify-content:center;gap:5px}.add-more-btn:hover{border-color:var(--accent-blue);color:var(--accent-blue);background:rgba(59,130,246,.05)}
+		.bottom-nav-container{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:9999;width:100%;max-width:860px;display:flex;justify-content:center;pointer-events:none;box-sizing:border-box}.nav-bar{display:flex;align-items:center;background:rgba(15,23,42,0.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:5px;border-radius:50px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 12px 40px rgba(0,0,0,0.5);position:relative;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;pointer-events:auto;width:fit-content;max-width:calc(100% - 40px);justify-content:flex-start;cursor:grab}.nav-bar:active{cursor:grabbing}.nav-bar::-webkit-scrollbar{display:none}.nav-item{position:relative;padding:8px 24px;color:#94a3b8;text-decoration:none;font-size:0.9rem;font-weight:700;white-space:nowrap;transition:color 0.3s ease;z-index:2;cursor:pointer;flex-shrink:0}.nav-item.active{color:#fff}.nav-indicator{position:absolute;height:calc(100% - 10px);top:5px;left:0;background:linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%);border-radius:50px;transition:all 0.5s cubic-bezier(0.16,1,0.3,1);z-index:1;box-shadow:0 4px 20px rgba(59,130,246,0.5);will-change:left,width;backface-visibility:hidden}
+		@media (hover: none) { .footer-button:hover, .copy-btn:hover, .open-btn:hover, .add-more-btn:hover { background: rgba(59, 130, 246, 0.15) !important; transform: none !important; box-shadow: none !important; color: var(--accent-blue) !important; } .footer-button:hover { color: #fff !important; } }
+		.footer-button{background:linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%);color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.95rem;box-shadow:0 4px 15px rgba(59,130,246,.4);transition:transform .2s,box-shadow .2s;display:inline-block}.footer-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.6)}
+		#customProxyInput::placeholder {color: #94a3b8 !important;opacity: 1;}
+		.notice-mini-card { display: block; width: 100%; box-sizing: border-box; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 10px 20px; font-size: 14px; color: var(--text-main); line-height: 1.6; word-break: break-all; white-space: normal; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 25px; }
+		.notice-list { display: inline; color: var(--text-muted); } .notice-list span:not(:last-child)::after { content: "|"; color: var(--border-color); margin: 0 8px; }
+	</style>
+</head>
+<body id="bodyTop">
+    <div class="container">
+        <header>
+            <h1>WARP MASQUE <span style="display: inline-block;">导航</span></h1>
+			<h1 id="dynamic-h1" style="font-size:1.25rem;font-weight:bold;margin-top:-12px;min-height:1.5em;">masque.pages.dev</h1>
+        </header>
+        <section id="khd">
+            <h2>客户端</h2>
+            <div class="group-card">
+                <div class="group-name">WARP / ONE<span class="tag tag-featured">EDT姐妹花</span></div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">Windows 新版二合一</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">downloads.cloudflareclient.com/v1/download/windows/ga</span></div>
+                        <a href="https://downloads.cloudflareclient.com/v1/download/windows/ga" class="open-btn"
+                            target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">安卓 旧版WARP</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">play.google.com/store/apps/details?id=com.cloudflare.onedotonedotonedotone</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.cloudflare.onedotonedotonedotone"
+                            class="open-btn" target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">安卓 新版ONE</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">play.google.com/store/apps/details?id=com.cloudflare.cloudflareoneagent</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.cloudflare.cloudflareoneagent"
+                            class="open-btn" target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">Mac 新版二合一</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">downloads.cloudflareclient.com/v1/download/macos/ga</span></div>
+                        <a href="https://downloads.cloudflareclient.com/v1/download/macos/ga" class="open-btn"
+                            target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">iOS 旧版WARP</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">apps.apple.com/us/app/id1423538627</span></div>
+                        <a href="https://apps.apple.com/us/app/id1423538627" class="open-btn" target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">iOS 新版ONE</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">apps.apple.com/us/app/id6443476492</span></div>
+                        <a href="https://apps.apple.com/us/app/id6443476492" class="open-btn" target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">历史版本</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">developers.cloudflare.com/cloudflare-one/team-and-resources/devices/cloudflare-one-client/download/</span>
+                        </div>
+                        <a href="https://developers.cloudflare.com/cloudflare-one/team-and-resources/devices/cloudflare-one-client/download/"
+                            class="open-btn" target="_blank">打开链接</a>
+                    </div>
+                </div>
+                <div class="item-desc">MASQUE新协议用的网段/端口和EDT通用，就等各内核完善支持新协议，WARP取代EDT的新时代可能要来</div>
+                <!-- <div class="link-row"> -->
+                <!-- <div class="item-header"><span class="item-title">ViRb3/wgcf</span><span class="tag tag-featured">非官方</span></div> -->
+                <!-- <div class="action-area"> -->
+                <!-- <div class="url-box"><span class="url-text">github.com/ViRb3/wgcf</span></div> -->
+                <!-- <a href="https://github.com/ViRb3/wgcf/releases" class="open-btn" target="_blank">打开链接</a> -->
+                <!-- </div> -->
+                <!-- </div>													 -->
+            </div>
+        </section>
+        
+		<section id="yxip">
+            <h2>优选IP</h2>	
+            <div class="group-card">
+                <div class="group-name">EDT/WARP 通用优选<span class="tag">随机优选</span><span class="tag tag-featured">尝鲜</span></div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">通用段 合集</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span
+                                class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=all&port=random</span></div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=all&port=random')">复制链接</button>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">核心段 合集</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=p0&port=random</span>
+                        </div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=p0&port=random')">复制链接</button>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">新版One MASQUE 主段</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=198&port=random</span>
+                        </div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=198&port=random')">复制链接</button>
+                    </div>
+                </div>			
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">Gateway MASQUE 主段</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=197&port=random</span>
+                        </div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=197&port=random')">复制链接</button>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">Gateway WireGuard 主段</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=193&port=random</span>
+                        </div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=193&port=random')">复制链接</button>
+                    </div>
+                </div>
+                <div class="link-row">
+                    <div class="item-header"><span class="item-title">旧版WARP 主段</span></div>
+                    <div class="action-area">
+                        <div class="url-box"><span class="url-text">https://warp-masque-bestip.pages.dev/?ips=50&level=192&port=random</span>
+                        </div>
+                        <button class="copy-btn" onclick="copy(this, 'https://warp-masque-bestip.pages.dev/?ips=50&level=192&port=random')">复制链接</button>
+                    </div>
+                </div>					
+				<div class="item-desc">说明：port=自定义端口443/8443/random；ips=自定义IP数量；level=自定义网段，p0-p3合集段从优等到次等，或198/197等具体号段，不同地区/运营商/时段，效果有差异；官方良心没有强制鉴权，不要滥用！WARP其它相关号段，欢迎自测并投稿</div>
+            </div>
+        </section>
+        <section id="cfgf">
+            <h2>Cloudflare 官方</h2>
+            <div class="group-card">
+                <div class="item-header"><span class="item-title">安全检查</span></div>
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">cloudflare-cn.com/ssl/encrypted-sni</span></div>
+                    <a href="https://www.cloudflare-cn.com/ssl/encrypted-sni/" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="item-header"><span class="item-title">流量雷达</span><span class="tag">监测</span><span class="tag">质量</span><span class="tag">路由</span><span class="tag">报告</span></div>
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">radar.cloudflare.com/zh-cn</span></div>
+                    <a href="https://radar.cloudflare.com/zh-cn" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="item-header"><span class="item-title">服务状态</span></div>
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">cloudflarestatus.com</span></div>
+                    <a href="https://www.cloudflarestatus.com/" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="item-header"><span class="item-title">学习中心</span><span class="tag">网络知识</span></div>
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">cloudflare.com/zh-cn/learning</span></div>
+                    <a href="https://www.cloudflare.com/zh-cn/learning/" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>
+            <div class="group-card">
+                <div class="item-header"><span class="item-title">官网介绍</span><span class="tag tag-featured">人类高质量企业</span></div>
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">cloudflare.com/zh-cn</span></div>
+                    <a href="https://www.cloudflare.com/zh-cn/" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span class="tips">Cloudflare WARP All in One<br>本站内容均来自网络，完全免费使用<br>WARP仅用于技术研究，请在24小时后删除，勿它用<br>请勿将本站分享到国内，可以私信给最要好的盆友<br>
+                2026-5-31 更新</span><br>
+            <a href="https://bestcf.pages.dev/report/" class="footer-button" target="_blank">反馈 / 失效 / 纠错 / 投稿</a><br><br>
+            <a href="https://www.youtube.com/@zhenxiangdinglv/posts" class="footer-button"
+                target="_blank">交流讨论</a><br><br><br><br>
+        </footer>
+
+    </div>
+</body>
+</html>
