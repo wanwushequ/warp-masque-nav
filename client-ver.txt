@@ -1,6 +1,6 @@
 CluvexStudio/Aether|1.6.0|2026-08-11
 Diniboy1123/usque|4.2.1|2026-07-20
-HynoR/uscf|1.0|2026-06-28
+HynoR/uscf|1.0.1|2026-08-18
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 garthnet/usque-android-app|1.0.2|2026-05-10
 immaghzbad/AetherST|1.4.2|2026-08-02
