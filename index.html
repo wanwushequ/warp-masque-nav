@@ -126,7 +126,7 @@
 						<a href="https://github.com/ircfspace/masque-plus/releases" class="open-btn" target="_blank">打开链接</a>
 					</div>
 				</div>				
-			</div>	
+			</div>
 
             <div class="group-card">
                 <div class="group-name">安卓客户端</div>
@@ -145,6 +145,38 @@
                     </div>
                 </div>
 			</div>
+			
+			<div class="group-card">
+				<div class="group-name">自定义SNI域名合集<span class="tag">SNI伪装</span><span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<select id="warpSNISelect" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="www.microsoft.com" style="background-color: #f1f5f9; color: #000000;">微软 | www.microsoft.com (推荐)</option>
+							<option value="www.apple.com" style="background-color: #f1f5f9; color: #000000;">苹果 | www.apple.com (推荐)</option>
+							<option value="www.lenovo.com" style="background-color: #f1f5f9; color: #000000;">联想 | www.lenovo.com</option>
+							<option value="www.samsung.com" style="background-color: #f1f5f9; color: #000000;">三星 | www.samsung.com</option>
+							<option value="www.hp.com" style="background-color: #f1f5f9; color: #000000;">惠普 | www.hp.com</option>
+							<option value="www.nestle.com" style="background-color: #f1f5f9; color: #000000;">雀巢 | www.nestle.com</option>
+							<option value="www.ikea.com" style="background-color: #f1f5f9; color: #000000;">宜家 | www.ikea.com</option>
+							<option value="www.anta.com" style="background-color: #f1f5f9; color: #000000;">安踏 | www.anta.com</option>
+							<option value="www.nike.com" style="background-color: #f1f5f9; color: #000000;">耐克 | www.nike.com</option>
+							<option value="www.adidas.com" style="background-color: #f1f5f9; color: #000000;">阿迪 | www.adidas.com</option>
+							<option value="www.allianz.com" style="background-color: #f1f5f9; color: #000000;">安联 | www.allianz.com</option>
+							<option value="www.decathlon.com" style="background-color: #f1f5f9; color: #000000;">迪卡侬 | www.decathlon.com</option>
+							<option value="www.unilever.com" style="background-color: #f1f5f9; color: #000000;">联合利华 | www.unilever.com</option>
+							<option value="cdn.jsdelivr.net" style="background-color: #f1f5f9; color: #000000;">CDN分发 | cdn.jsdelivr.net</option>
+							<option value="www.visa.cn" style="background-color: #f1f5f9; color: #000000;">VISA中国 | www.visa.cn</option>
+							<option value="www.cloudflare.com" style="background-color: #f1f5f9; color: #000000;">Cloudflare | www.cloudflare.com</option>
+							<option value="consumer-masque.cloudflareclient.com" style="background-color: #f1f5f9; color: #000000;">CF默认 不推荐 | consumer-masque.cloudflareclient.com (以后被阻断的概率高)</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="warpSNICopyBtn" onclick="warpSNICopyURL()">复制链接</button>
+				</div>
+				<div class="item-desc">可以是任意域名，一般不会导致无法连接，原则是可直连访问且业务合规的网站，建议从EDT优选域名(大型跨国企业)中选择</div>
+			</div>
+			<script>function warpSNICopyURL(){const e=document.getElementById("warpSNISelect"),t=document.getElementById("warpSNICopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("warpSNISelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				
+			
 			
         </section>
 
