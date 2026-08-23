@@ -416,7 +416,7 @@
 						<button id="warpCopyBtn" class="copy-btn" onclick="warpCopyCommand()">复制命令</button>
 					</div>
 				</div>
-				<div class="item-desc">下拉选择命令说明后，下方自动显示完整命令，点击"复制命令"按钮，然后打开终端(管理员)，粘贴命令并回车执行</div>
+				<div class="item-desc">下拉选择操作，下方会显示完整命令，点击"复制命令"按钮，然后打开终端(管理员)，粘贴命令并回车执行</div>
 			</div>
 			<script>document.addEventListener("DOMContentLoaded",function(){const select=document.getElementById("warpCommandSelect");const display=document.getElementById("warpCommandDisplay");if(select&&display){display.textContent=select.value;select.addEventListener("change",function(){display.textContent=this.value})}});function warpCopyCommand(){const select=document.getElementById("warpCommandSelect");const copyBtn=document.getElementById("warpCopyBtn");if(select&&copyBtn){const command=select.value;const textarea=document.createElement("textarea");textarea.value=command;document.body.appendChild(textarea);textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="已复制";setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>
 		
