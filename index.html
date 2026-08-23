@@ -209,7 +209,32 @@
                     </div>
                 </div>					
 			</div>			
-			
+			<div class="group-card">
+				<div class="group-name">MASQUE Endpoint 端点IP:端口<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<select id="masqueIPSelect" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="162.159.198.2" style="background-color: #f1f5f9; color: #000000;">162.159.198.2 (默认IP)</option>
+						</select>
+					</div>
+					<div class="url-box" style="flex: 1; min-width: 150px; padding: 0 10px;">
+						<select id="masquePortSelect" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="443" style="background-color: #f1f5f9; color: #000000;">443 (默认端口)</option>
+							<option value="500" style="background-color: #f1f5f9; color: #000000;">500</option>
+							<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
+							<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500</option>
+							<option value="4443" style="background-color: #f1f5f9; color: #000000;">4443</option>
+							<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
+							<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="masqueCopyBtn" onclick="masqueCopyURL()">复制IP:端口</button>
+				</div>
+				<div class="item-desc">端点默认暂时不要修改，注意是.2不是.1(后续有新的在此更新)，默认端口为443，其它为Fallback备用端口，均为UDP</div>
+			</div>
+			<script>function masqueCopyURL(){const ipSelect=document.getElementById("masqueIPSelect"),portSelect=document.getElementById("masquePortSelect"),copyBtn=document.getElementById("masqueCopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
 			<div class="group-card">
 				<div class="group-name">自定义SNI域名合集<span class="tag">SNI伪装</span><span class="tag tag-featured">NEW</span></div>
 				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
@@ -241,8 +266,6 @@
 				<div class="item-desc">可以是任意域名，一般不会导致无法连接，原则是可直连访问且业务合规的网站，建议从EDT优选域名(大型跨国企业)中选择</div>
 			</div>
 			<script>function warpSNICopyURL(){const e=document.getElementById("warpSNISelect"),t=document.getElementById("warpSNICopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("warpSNISelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				
-			
-			
         </section>
 
 		<section id="Cloudflare">
