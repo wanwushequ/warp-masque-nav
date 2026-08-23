@@ -8,6 +8,7 @@ MatsuriDayo/nekoray|4.0.1|2024-12-12
 garthnet/usque-android-app|1.0.2|2026-05-10
 immaghzbad/AetherST|1.5.0-android|2026-08-21
 ircfspace/masque-plus|2.9.0|2025-11-01
+mbm110/MSN-GUARD|1.4.0|2026-08-22
 throneproj/Throne|1.2.4|2026-08-09
 velnox4827/saman-aether|1.2.1|2026-08-24
 vernette/warpscout|0.14.0|2026-08-13
