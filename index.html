@@ -368,6 +368,58 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="group-card">
+				<div class="group-name">WARP 命令合集<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 3; min-width: 200px; padding: 0 10px;">
+						<select id="warpCommandSelect" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="warp-cli status" style="background-color: #f1f5f9; color: #000000;">查看当前WARP的连接状态和网络详情</option>
+							<option value="warp-cli connect" style="background-color: #f1f5f9; color: #000000;">建立与WARP服务的VPN连接</option>
+							<option value="warp-cli disconnect" style="background-color: #f1f5f9; color: #000000;">断开当前的WARP VPN连接</option>
+							<option value="warp-cli registration new" style="background-color: #f1f5f9; color: #000000;">首次使用，生成并注册新设备</option>
+							<option value="warp-cli registration show" style="background-color: #f1f5f9; color: #000000;">查看当前设备的注册信息和账户类型</option>
+							<option value="warp-cli account" style="background-color: #f1f5f9; color: #000000;">查看当前账户状态信息，如WARP+剩余流量</option>
+							<option value="warp-cli mode warp" style="background-color: #f1f5f9; color: #000000;">切换到标准全局VPN代理模式</option>
+							<option value="warp-cli mode proxy" style="background-color: #f1f5f9; color: #000000;">切换到仅本地SOCKS5代理模式</option>
+							<option value="warp-cli proxy port" style="background-color: #f1f5f9; color: #000000;">设置本地SOCKS5代理模式的监听端口</option>
+							<option value="warp-cli mode doh" style="background-color: #f1f5f9; color: #000000;">切换到DNS over HTTPS模式（仅加密DNS查询）</option>
+							<option value="warp-cli tunnel protocol set MASQUE" style="background-color: #f1f5f9; color: #000000;">将隧道协议设置为MASQUE（新版默认）</option>
+							<option value="warp-cli tunnel protocol set WireGuard" style="background-color: #f1f5f9; color: #000000;">将隧道协议切换为经典WireGuard</option>
+							<option value="warp-cli tunnel endpoint set IP:PORT" style="background-color: #f1f5f9; color: #000000;">强制指定自定义的接入端点</option>
+							<option value="warp-cli tunnel endpoint reset" style="background-color: #f1f5f9; color: #000000;">清除自定义的接入端点，恢复官方默认节点</option>
+							<option value="warp-cli registration license" style="background-color: #f1f5f9; color: #000000;">激活WARP+或WARP+ Unlimited的许可证密钥</option>
+							<option value="warp-cli registration delete" style="background-color: #f1f5f9; color: #000000;">删除当前设备的注册信息并重置账号</option>
+							<option value="warp-cli dns families off" style="background-color: #f1f5f9; color: #000000;">关闭1.1.1.1 for Families的过滤功能</option>
+							<option value="warp-cli dns families malware" style="background-color: #f1f5f9; color: #000000;">开启恶意软件防护过滤</option>
+							<option value="warp-cli dns families full" style="background-color: #f1f5f9; color: #000000;">开启恶意软件和成人内容过滤</option>
+							<option value="warp-cli reset-settings" style="background-color: #f1f5f9; color: #000000;">恢复全部设置为初始默认状态</option>
+							<option value="warp-cli settings" style="background-color: #f1f5f9; color: #000000;">查看当前WARP客户端的全部详细设置</option>
+							<option value="warp-cli --accept-tos [COMMAND]" style="background-color: #f1f5f9; color: #000000;">在执行命令时自动接受服务条款，常用于脚本化操作</option>
+							<option value="sudo warp-diag" style="background-color: #f1f5f9; color: #000000;">生成用于调试的日志压缩包</option>
+							<option value="sudo warp-diag feedback" style="background-color: #f1f5f9; color: #000000;">提交反馈或报告bug并创建支持工单</option>
+							<option value="warp-cli --help" style="background-color: #f1f5f9; color: #000000;">显示所有支持的命令和选项帮助信息</option>
+							<option value="warp-cli --version" style="background-color: #f1f5f9; color: #000000;">显示当前安装的warp-cli版本号</option>
+							<option value="warp-cli -l, --listen" style="background-color: #f1f5f9; color: #000000;">监听状态变化和DNS日志</option>
+							<option value="warp-cli -v, --verbose" style="background-color: #f1f5f9; color: #000000;">启用详细输出模式，多个v增加详细程度</option>
+							<option value="warp-cli generate-completions" style="background-color: #f1f5f9; color: #000000;">为指定shell生成命令补全并输出到stdout</option>
+						</select>
+					</div>
+				</div>
+				<div class="link-row">
+					<div class="action-area" style="gap: 10px; flex-wrap: wrap; justify-content: flex-end;">
+						<div class="url-box" style="flex: 1; padding: 0 10px;">
+							<span id="warpCommandDisplay" class="url-text"
+								style="width: 100%; background: transparent; border: none; outline: none; color: #94a3b8; opacity: 0.8; display: inline-block;">请选择命令</span>
+						</div>
+						<button id="warpCopyBtn" class="copy-btn" onclick="warpCopyCommand()">复制命令</button>
+					</div>
+				</div>
+				<div class="item-desc">下拉选择命令说明后，下方自动显示完整命令，点击"复制命令"按钮，然后打开终端(管理员)，粘贴命令并回车执行</div>
+			</div>
+			<script>document.addEventListener("DOMContentLoaded",function(){const select=document.getElementById("warpCommandSelect");const display=document.getElementById("warpCommandDisplay");if(select&&display){display.textContent=select.value;select.addEventListener("change",function(){display.textContent=this.value})}});function warpCopyCommand(){const select=document.getElementById("warpCommandSelect");const copyBtn=document.getElementById("warpCopyBtn");if(select&&copyBtn){const command=select.value;const textarea=document.createElement("textarea");textarea.value=command;document.body.appendChild(textarea);textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="已复制";setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>
+		
 		</section>		
 		
 		<section id="jiaocheng">
