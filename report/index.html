@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>给站长留言</title>
+    <title>给管理员留言</title>
     <script src="email.min.js"></script>
     <script>
     (function() {
@@ -23,7 +23,7 @@
                 const hasSensitiveWord = sensitiveWords.some(word => checkText.includes(word));
 
                 if (hasSensitiveWord) {
-                    alert("提交失败！");
+                    alert("提交失败！Email.JS库将记录你的IP、位置和设备等信息发送给管理员！");
                     return;
                 }
 
