@@ -15,14 +15,22 @@
             document.getElementById("feedbackForm").addEventListener("submit", function(event) {
                 event.preventDefault();
 
-                const submitButton = document.getElementById("sendmsg");
-                const originalText = "立即提交反馈";
-                submitButton.textContent = "发送中...";
-                submitButton.disabled = true;
-
                 const message = document.getElementById("message").value;
                 const email = document.getElementById("email").value || "未填写";
                 const nickname = document.getElementById("nickname").value || "匿名";
+                const sensitiveWords = ["SB", "sb", "S.B.", "傻逼", "沙雕", "煞笔", "傻逼", "傻屄", "傻b", "sha逼", "shabi", "沙比", "傻比", "妈的", "他妈", "特么", "操", "草", "肏", "靠泥马", "草泥马", "草拟吗", "操你妈", "草泥马", "马勒戈壁", "玛德", "泥马", "你妈", "尼玛", "滚", "滚蛋", "去死", "死全家", "废物", "垃圾", "脑残", "智障", "白痴", "低能", "神经病", "王八蛋", "杂种", "畜生", "狗娘养", "婊子", "贱人", "贱货", "傻屌", "叼毛", "屌丝", "几把", "鸡巴", "jb", "JB", "日你", "干你", "娘的", "奶奶的", "全家"];
+                const checkText = message + " " + nickname;
+                const hasSensitiveWord = sensitiveWords.some(word => checkText.includes(word));
+
+                if (hasSensitiveWord) {
+                    alert("提交失败！");
+                    return;
+                }
+
+                const submitButton = document.getElementById("sendmsg");
+                const originalText = "立即提交";
+                submitButton.textContent = "发送中...";
+                submitButton.disabled = true;
 
                 emailjs.send("service_6emjbiy", "666", {
                     message: message,
@@ -91,7 +99,6 @@
             color: #fff; 
             display: flex; 
             align-items: center; 
-            <!-- justify-content: center; -->
         }
 
         .group-card { 
@@ -202,10 +209,6 @@
                 <button type="submit" id="sendmsg">立即提交</button>
             </form>
         </div>
-
-        <!-- <div class="footer"> -->
-            <!-- <p>感谢您的反馈，管理员会尽快处理</p> -->
-        <!-- </div> -->
     </div>
 </body>
 </html>
