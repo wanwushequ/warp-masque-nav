@@ -240,7 +240,7 @@
             <div class="group-card">
                 <div class="group-name">MASQUE × Clash × 小火箭 专用<span class="tag tag-featured">NEW</span></div>			
 				<div class="link-row">
-                    <div class="item-header"><span class="item-title">Usque 转换器</span><span class="tag tag-featured">1.1.6</span></div>
+                    <div class="item-header"><span class="item-title">Usque 转换器</span><span class="tag tag-featured">1.1.7</span></div>
                     <div class="action-area">
                         <div class="url-box"><span class="url-text">masque.pages.dev/tools/usque-converter/</span></div>
                         <a href="https://masque.pages.dev/tools/usque-converter/" class="open-btn" target="_blank">打开链接</a>
@@ -370,13 +370,15 @@
 							<option value="www.unilever.com">联合利华 | www.unilever.com</option>
 							<option value="www.luckincoffee.com">瑞幸咖啡 | www.luckincoffee.com</option>
 							<option value="cdn.jsdelivr.net">CDN分发 | cdn.jsdelivr.net</option>
+							<option value="www.speedtest.net">SpeedTest | www.speedtest.net</option>
+							<option value="speed.cloudflare.com">CF Speed | speed.cloudflare.com</option>
 							<option value="www.cloudflare.com">Cloudflare | www.cloudflare.com</option>
-							<option value="consumer-masque.cloudflareclient.com">CF默认 不推荐 | consumer-masque.cloudflareclient.com (以后被阻断的概率高)</option>
+							<option value="consumer-masque.cloudflareclient.com">MASQUE默认 | consumer-masque.cloudflareclient.com (不推荐)</option>
 						</select>
 					</div>
 					<button class="copy-btn" id="warpSNICopyBtn" onclick="warpSNICopyURL()">复制域名</button>
 				</div>
-				<div class="item-desc">可以是任意域名，一般不会导致无法连接，原则是可直连访问且业务合规的网站，建议从EDT优选域名(大型跨国企业)中选择</div>
+				<!-- <div class="item-desc">可以是任意域名，一般不会导致无法连接，原则是可直连访问且业务合规的网站，建议从EDT优选域名(大型跨国企业)中选择</div> -->
 			</div>
 			<script>function warpSNICopyURL(){const e=document.getElementById("warpSNISelect"),t=document.getElementById("warpSNICopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("warpSNISelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				
  			
@@ -652,7 +654,7 @@
         <footer>
             <span class="tips">Cloudflare WARP All in One<br>内容来自网络，免费使用，不提供节点<br>仅用于技术研究，24小时后请删除，禁止它用<br>
 				<!-- 请勿将本站分享到国内，可以私信给最要好的盆友<br> -->
-                2026-8-25 更新</span><br>
+                2026-8-26 更新</span><br>
             <a href="report/" class="footer-button" target="_blank">反馈 / 失效 / 纠错 / 投稿</a>
 			<!-- <br><br> -->
             <!-- <a href="https://www.youtube.com/@zhenxiangdinglv/posts" class="footer-button" target="_blank">交流讨论</a> -->
