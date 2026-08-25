@@ -9,7 +9,6 @@
 
   function applyEndpoint() { generate(); }
   function applyJsonEndpoint(value) {
-	if (e.endpointIp.value === "all") return;  // 默认为all多端点
     e.endpointIp.querySelectorAll("option[data-json-endpoint]").forEach((option)=>option.remove());
     e.endpointPort.querySelectorAll("option[data-json-port]").forEach((option)=>option.remove());
     const raw=String(value||"").trim().replace(/^https?:\/\//i,"");
@@ -31,49 +30,6 @@
     if (!config || !e.endpointIp.value || !e.tunnelIp.value || !config.private_key || !config.endpoint_pub_key) {
       e.result.textContent="masque://…"; e.copyButton.disabled=true; e.yamlPreview.textContent="# 等待加载 Usque JSON…"; e.downloadYamlButton.disabled=true; return;
     }
-    
-    // all 多节点逻辑
-    if (e.endpointIp.value === "all") {
-      const allServers = ["162.159.198.2", "162.159.199.2", "masque.bestcf.eu.cc", "masque1.bestcf.eu.cc", "masque2.bestcf.eu.cc"];
-      const baseParams = [["publicKey",pemBody(config.endpoint_pub_key)],["privateKey",config.private_key.trim()],["ip",e.tunnelIp.value],["dns",e.dns.value.trim()],["udp",udpEnabled?"1":"0"],["cc",e.cc.value],["flag",e.flag.value.trim()]];
-      const baseParamStr = baseParams.map(([k,v])=>`${k}=${enc(v)}`).join("&");
-      
-      // Shadowrocket: 多个masque://链接，换行分隔
-      const masqueUrls = allServers.map(server => 
-        `masque://${server}:${e.endpointPort.value}?${baseParamStr}#${enc(e.name.value.trim()||"WARP-MASQUE")}`
-      ).join("\n");
-      e.result.textContent = masqueUrls;
-      e.copyButton.disabled = false;
-      e.hint.textContent = "已完成转换，可以直接复制并导入 Shadowrocket。";
-      e.status.textContent = "准备就绪";
-      e.status.classList.add("ready");
-      
-      // Clash: 多个proxy节点
-      const clashDns = e.dns.value.split(/[\s,]+/).filter(Boolean).join(", ");
-      const clashNodes = allServers.map((server, index) => {
-        return `  - name: "MASQUE${index + 1} - YouTube真香定律"
-    type: masque
-    server: ${server}
-    port: ${e.endpointPort.value}
-    private-key: ${config.private_key.trim()}
-    public-key: ${pemBody(config.endpoint_pub_key)}
-    ip: ${e.tunnelIp.value}
-    mtu: 1280
-    udp: ${udpEnabled}
-    remote-dns-resolve: true
-    dns: [ ${clashDns} ]`;
-      }).join("\n\n");
-      
-      clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(/^proxies:.*$/m, `proxies:\n${clashNodes}`);
-      e.yamlPreview.textContent = clashYaml;
-      e.downloadYamlButton.disabled = false;
-      e.clashHint.textContent = "已套用目前 Endpoint 与 usque 密钥，可直接下载并导入 Clash。";
-      e.clashStatus.textContent = "准备就绪";
-      e.clashStatus.classList.add("ready");
-      return;
-    }
-    
-    // 原有单节点逻辑
     const params = [["publicKey",pemBody(config.endpoint_pub_key)],["privateKey",config.private_key.trim()],["ip",e.tunnelIp.value],["dns",e.dns.value.trim()],["udp",udpEnabled?"1":"0"],["cc",e.cc.value],["flag",e.flag.value.trim()]].map(([k,v])=>`${k}=${enc(v)}`).join("&");
     e.result.textContent=`masque://${e.endpointIp.value}:${e.endpointPort.value}?${params}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
     e.copyButton.disabled=false; e.hint.textContent="已完成转换，可以直接复制并导入 Shadowrocket。"; e.status.textContent="准备就绪"; e.status.classList.add("ready");
