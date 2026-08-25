@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Usque 转换器</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="clash-mi.css">
+</head>
+<body>
+  <header><h1>Usque 转换器</h1></header>
+  <main>
+    <section class="grid">
+      <article class="card upload" id="dropZone" tabindex="0" role="button" aria-label="选择 Usque JSON 文件">
+        <input id="fileInput" type="file" accept=".json,application/json" hidden>
+        <div class="icon">⇧</div><h2>拖放 Usque 生成的 .json 文件到这里</h2>
+        <button id="chooseButton" type="button" class="link-button">或点击选择文件</button><span class="pill">.json</span>
+        <div id="fileReady" class="file-ready" hidden><span></span><strong id="fileName"></strong><b>✓</b></div>
+        <p id="error" class="error" role="alert"></p>
+      </article>
+      <article class="card settings">
+        <h2>⚙ 设置</h2>
+        <div class="form">
+          <label for="endpointIp">Cloudflare IPv4 端点</label>
+          <select id="endpointIp">
+            <option value="162.159.198.1">162.159.198.1</option>
+            <option value="162.159.198.2" selected>162.159.198.2</option>
+            <option value="162.159.199.1">162.159.199.1</option>
+            <option value="162.159.199.2">162.159.199.2</option>
+          </select>
+          <label for="endpointPort">Cloudflare IPv4 端口</label>
+          <select id="endpointPort">
+            <option value="443" selected>443</option><option value="500">500</option>
+            <option value="1701">1701</option><option value="4500">4500</option>
+            <option value="4443">4443</option><option value="8443">8443</option>
+            <option value="8095">8095</option>
+          </select>
+          <label for="tunnelIp">内部 IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
+          <label for="dns">DNS域名</label><input id="dns" value="1.1.1.1, 8.8.8.8">
+          <label for="udp">UDP转发</label><button id="udp" class="toggle on" role="switch" aria-checked="true"><span></span></button>
+          <label for="cc">拥塞控制</label><select id="cc"><option>bbr</option><option>cubic</option><option>reno</option></select>
+          <label for="flag">标记</label><input id="flag" value="CDN">
+          <label for="name">名称</label><input id="name" value="Cloudflare-MASQUE">
+        </div>
+      </article>
+    </section>
+    <section class="card output">
+      <div class="platform-tabs" aria-label="输出格式"><button id="shadowrocketTab" class="active" type="button">Shadowrocket</button><button id="clashTab" type="button">Clash</button></div>
+      <div id="shadowrocketPanel">
+        <div class="output-head"><div><h2>Shadowrocket 小火箭 MASQUE URL</h2><p id="hint">加载有效的 Usque JSON 后，URL 会在这里生成。</p></div><span id="status">等待文件</span></div>
+        <div class="url-row"><code id="result">masque://…</code><button id="copyButton" disabled>▣<br><strong>复制 URL</strong></button></div>
+      </div>
+      <div id="clashPanel" hidden>
+        <div class="output-head"><div><h2>Clash Mi (IOS)/Clash/Mihomo MASQUE YAML</h2><p id="clashHint">加载有效的 Usque JSON 后，即可下载配置文件。</p></div><span id="clashStatus">等待文件</span></div>
+        <div class="url-row yaml-row"><pre id="yamlPreview"># 等待加载 Usque JSON…</pre><button id="downloadYamlButton" disabled>⇩<br><strong>下载 YAML</strong></button></div>
+      </div>
+    </section>
+<p class="note">文件内容不会上传或离开你的浏览器。URL 包含私人密钥，请妥善保管。</p>
+  </main>
+  <script src="yaml-template.js"></script><script src="script.js"></script>
+</body>
+</html>
