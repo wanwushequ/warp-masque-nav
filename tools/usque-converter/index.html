@@ -28,8 +28,8 @@
         <div class="form">
           <label for="endpointIp">Cloudflare IPv4 端点</label>
           <select id="endpointIp">
-		    <option value="all" selected>多端点IP自动选择 (默认配置)</option>
-		    <option value="162.159.198.2">162.159.198.2 (默认IP)</option>
+		    <option value="all" selected>多端点IP自动选择 (默认)</option>
+		    <option value="162.159.198.2">162.159.198.2 (主要IP)</option>
 			<option value="162.159.199.2">162.159.199.2 (备用IP)</option>
 			<option value="masque.bestcf.eu.cc">masque.bestcf.eu.cc (测试)</option>
 			<option value="masque1.bestcf.eu.cc">masque1.bestcf.eu.cc (测试)</option>
@@ -39,9 +39,12 @@
           </select>
           <label for="endpointPort">Cloudflare IPv4 端口</label>
           <select id="endpointPort">
-            <option value="443" selected>443</option><option value="500">500</option>
-            <option value="1701">1701</option><option value="4500">4500</option>
-            <option value="4443">4443</option><option value="8443">8443</option>
+            <option value="443" selected>443 (默认)</option>
+			<option value="8443">8443</option>
+			<option value="500">500</option>
+            <option value="1701">1701</option>
+			<option value="4500">4500</option>
+            <option value="4443">4443</option>
             <option value="8095">8095</option>
           </select>
           <label for="tunnelIp">内部 IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
