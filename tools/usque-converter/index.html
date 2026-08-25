@@ -81,11 +81,16 @@
 		  <option value="www.cloudflare.com">Cloudflare | www.cloudflare.com</option>
 		  <option value="www.cloudflare.com">MASQUE | consumer-masque.cloudflareclient.com</option>
 		</select>		  
-          <label for="tunnelIp">内部 IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
-          <label for="dns">DNS域名</label><input id="dns" value="1.1.1.1, 8.8.8.8, 1.0.0.1, 8.8.4.4">
-          <label for="udp">UDP转发</label><button id="udp" class="toggle on" role="switch" aria-checked="true"><span></span></button>
-          <label for="cc">拥塞控制</label><select id="cc"><option>bbr</option><option>cubic</option><option>reno</option></select>
-          <label for="flag">标记</label><input id="flag" value="CDN">
+          <label for="tunnelIp">Cloudflare 内部IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
+          <label for="dns">DNS</label><input id="dns" value="1.1.1.1, 8.8.8.8, 1.0.0.1, 8.8.4.4">
+		<label for="cc">加速策略</label>
+		<select id="cc">
+		  <option value="bbr">性能模式 | BBR (推荐)</option>
+		  <option value="cubic">均衡模式 | CUBIC</option>
+		  <option value="reno">兼容模式 | RENO</option>
+		</select>
+		  <label for="udp">UDP转发</label><button id="udp" class="toggle on" role="switch" aria-checked="true"><span></span></button>
+          <label for="flag">标识</label><input id="flag" value="CDN">
           <label for="name">名称</label><input id="name" value="MASQUE-YouTube真香定律">
         </div>
       </article>
@@ -107,7 +112,7 @@
     <div style="text-align: center; margin-top: 20px;">
       <p class="note" style="margin-bottom: 4px;">文件内容不会上传或离开你的浏览器，链接包含私人密钥，请妥善保管</p>
       <p class="note" style="margin-bottom: 4px;">Cloudflare WARP MASQUE 导航 - <a href="https://masque.pages.dev" target="_blank" style="color: var(--teal); text-decoration: none;">https://masque.pages.dev</a></p>
-	  <p class="note" style="margin-bottom: 4px;">v1.1.7 | Thanks KxK3lv1n</p>
+	  <p class="note" style="margin-bottom: 4px;">v1.1.8 | Thanks KxK3lv1n</p>
     </div>
   </main>
   <script src="yaml-template.js?v=0826"></script><script src="script.js?v=0826"></script>

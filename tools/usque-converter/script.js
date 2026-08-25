@@ -61,11 +61,16 @@
     mtu: 1280
     udp: ${udpEnabled}
     remote-dns-resolve: true
+    congestion-controller: ${e.cc.value}
     dns: [ ${clashDns} ]
-    sni: ${e.sni.value}`; // 新增SNI
+    sni: ${e.sni.value}`; // 新增SNI;单IP非All未增加cc字段用于A/B测试
       }).join("\n\n");
       
-      clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(/^proxies:.*$/m, `proxies:\n${clashNodes}`);
+      // clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(/^proxies:.*$/m, `proxies:\n${clashNodes}`);
+		clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(
+		  /^proxies:[\s\S]*?(?=\n# 机场配置模块)/m,
+		  `proxies:\n${clashNodes}\n\n`
+		);  //剔除All下的示例节点
       e.yamlPreview.textContent = clashYaml;
       e.downloadYamlButton.disabled = false;
       e.clashHint.textContent = "已套用目前 Endpoint 与 usque 密钥，可直接下载并导入 Clash。";
@@ -79,7 +84,7 @@
     e.result.textContent=`masque://${e.endpointIp.value}:${e.endpointPort.value}?${params}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
     e.copyButton.disabled=false; e.hint.textContent="已完成转换，可以直接复制并导入 Shadowrocket。"; e.status.textContent="准备就绪"; e.status.classList.add("ready");
     const clashDns=e.dns.value.split(/[\s,]+/).filter(Boolean).join(", ");
-    clashYaml=window.MIHOMO_MASQUE_TEMPLATE.replace(/^(\s{4}server:)\s*.*$/m,`$1 ${e.endpointIp.value}`).replace(/^(\s{4}port:)\s*.*$/m,`$1 ${e.endpointPort.value}`).replace(/^(\s{4}private-key:)\s*.*$/m,`$1 ${config.private_key.trim()}`).replace(/^(\s{4}public-key:)\s*.*$/m,`$1 ${pemBody(config.endpoint_pub_key)}`).replace(/^(\s{4}ip:)\s*.*$/m,`$1 ${e.tunnelIp.value}`).replace(/^(\s{4}udp:)\s*.*$/m,`$1 ${udpEnabled}`).replace(/^(\s{4}remote-dns-resolve:)\s*.*$/m,"$1 true").replace(/^(\s{4}dns:)\s*.*$/m,`$1 [ ${clashDns} ]\n    sni: ${e.sni.value}`);
+    clashYaml=window.MIHOMO_MASQUE_TEMPLATE.replace(/^(\s{4}server:)\s*.*$/m,`$1 ${e.endpointIp.value}`).replace(/^(\s{4}port:)\s*.*$/m,`$1 ${e.endpointPort.value}`).replace(/^(\s{4}private-key:)\s*.*$/m,`$1 ${config.private_key.trim()}`).replace(/^(\s{4}public-key:)\s*.*$/m,`$1 ${pemBody(config.endpoint_pub_key)}`).replace(/^(\s{4}ip:)\s*.*$/m,`$1 ${e.tunnelIp.value}`).replace(/^(\s{4}udp:)\s*.*$/m,`$1 ${udpEnabled}`).replace(/^(\s{4}remote-dns-resolve:)\s*.*$/m,"$1 true").replace(/^(\s{4}congestion-controller:)\s*.*$/m, `$1 ${e.cc.value}`).replace(/^(\s{4}dns:)\s*.*$/m,`$1 [ ${clashDns} ]\n    sni: ${e.sni.value}`);
     e.yamlPreview.textContent=clashYaml; e.downloadYamlButton.disabled=false; e.clashHint.textContent="已套用目前 Endpoint 与 usque 密钥，可直接下载并导入 Clash。"; e.clashStatus.textContent="准备就绪"; e.clashStatus.classList.add("ready");
   }
   async function load(file) {
