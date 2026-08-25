@@ -11,20 +11,20 @@
   <header><h1>Usque 转换器</h1></header>
   <main>
     <div class="card" style="padding: 1.25rem 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
-      <h2 style="margin: 0;">Usque一键注册工具</h2>
+      <h3 style="margin: 0;">第1步：Usque一键注册工具</h3>
       <a href="Usque.zip" class="link-button" style="background: var(--teal); color: #fff; padding: 0.55rem 1.6rem; border-radius: 40px; text-decoration: none; font-weight: 500;">下载</a>
     </div>
 
     <section class="grid">
       <article class="card upload" id="dropZone" tabindex="0" role="button" aria-label="选择 Usque JSON 文件">
         <input id="fileInput" type="file" accept=".json,application/json" hidden>
-        <div class="icon">⇧</div><h2>拖放 Usque 注册生成的 .json 文件到这里</h2>
+        <div class="icon">⇧</div><h2>第2步：拖放 Usque 注册生成的 .json 文件到这里</h2>
         <button id="chooseButton" type="button" class="link-button">或点击选择文件</button><span class="pill">.json</span>
         <div id="fileReady" class="file-ready" hidden><span></span><strong id="fileName"></strong><b>✓</b></div>
         <p id="error" class="error" role="alert"></p>
       </article>
       <article class="card settings">
-        <h2>设置</h2>
+        <h2>第3步：设置</h2>
         <div class="form">
           <label for="endpointIp">Cloudflare IPv4 端点</label>
           <select id="endpointIp">
@@ -96,9 +96,10 @@
       </article>
     </section>
     <section class="card output">
+	<h2>第4步：转换</h2>
       <div class="platform-tabs" aria-label="输出格式">
-        <button id="clashTab" class="active" type="button">Clash</button>
-        <button id="shadowrocketTab" type="button">Shadowrocket</button>
+        <button id="clashTab" class="active" type="button">Clash (全平台)</button>
+        <button id="shadowrocketTab" type="button">小火箭 (iOS)</button>
       </div>
       <div id="clashPanel">
         <div class="output-head"><div><h2>MASQUE Clash YAML</h2><p id="clashHint">加载有效的 Usque JSON 后，即可下载配置文件。</p></div><span id="clashStatus">等待文件</span></div>
