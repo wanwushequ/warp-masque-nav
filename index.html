@@ -240,7 +240,7 @@
             <div class="group-card">
                 <div class="group-name">MASQUE × Clash × 小火箭 专用<span class="tag tag-featured">NEW</span></div>			
 				<div class="link-row">
-                    <div class="item-header"><span class="item-title">Usque 转换器</span><span class="tag tag-featured">1.1.3</span></div>
+                    <div class="item-header"><span class="item-title">Usque 转换器</span><span class="tag tag-featured">1.1.4</span></div>
                     <div class="action-area">
                         <div class="url-box"><span class="url-text">masque.pages.dev/tools/usque-converter/</span></div>
                         <a href="https://masque.pages.dev/tools/usque-converter/" class="open-btn" target="_blank">打开链接</a>
@@ -379,7 +379,22 @@
 				<div class="item-desc">可以是任意域名，一般不会导致无法连接，原则是可直连访问且业务合规的网站，建议从EDT优选域名(大型跨国企业)中选择</div>
 			</div>
 			<script>function warpSNICopyURL(){const e=document.getElementById("warpSNISelect"),t=document.getElementById("warpSNICopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("warpSNISelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				
-        </section>
+ 			
+			<div class="group-card">
+				<div class="group-name">Endpoint 延迟测试链接<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
+						<select id="latencyTestSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="https://speed.cloudflare.com/meta">官方 | speed.cloudflare.com/meta (推荐)</option>
+							<option value="http://latency-test.skk.moe/endpoint">Sukka | latency-test.skk.moe/endpoint</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="latencyTestCopyBtn" onclick="latencyTestCopyURL()">复制链接</button>
+				</div>
+			</div>
+			<script>function latencyTestCopyURL(){const e=document.getElementById("latencyTestSelect"),t=document.getElementById("latencyTestCopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("latencyTestSelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				       
+		</section>
 		
 		<section id="jiaocheng">
             <h2>教程</h2>

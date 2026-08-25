@@ -61,7 +61,8 @@
     mtu: 1280
     udp: ${udpEnabled}
     remote-dns-resolve: true
-    dns: [ ${clashDns} ]`;
+    dns: [ ${clashDns} ]
+    sni: www.microsoft.com`; // 新增SNI
       }).join("\n\n");
       
       clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(/^proxies:.*$/m, `proxies:\n${clashNodes}`);
