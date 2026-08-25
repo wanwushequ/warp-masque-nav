@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const ids = ["fileInput","dropZone","chooseButton","fileReady","fileName","error","endpointIp","endpointPort","tunnelIp","dns","udp","cc","flag","name","result","copyButton","hint","status","shadowrocketTab","clashTab","shadowrocketPanel","clashPanel","clashHint","clashStatus","yamlPreview","downloadYamlButton"];
+  const ids = ["fileInput","dropZone","chooseButton","fileReady","fileName","error","endpointIp","endpointPort","tunnelIp","dns","udp","cc","flag","name","result","copyButton","hint","status","shadowrocketTab","clashTab","shadowrocketPanel","clashPanel","clashHint","clashStatus","yamlPreview","downloadYamlButton","sni"];
   const e = Object.fromEntries(ids.map((id) => [id, $(id)]));
   let config = null, udpEnabled = true, clashYaml = "";
   const pemBody = (v="") => v.replace(/-----BEGIN PUBLIC KEY-----|-----END PUBLIC KEY-----/g, "").replace(/\s/g, "");
@@ -62,7 +62,7 @@
     udp: ${udpEnabled}
     remote-dns-resolve: true
     dns: [ ${clashDns} ]
-    sni: www.microsoft.com`; // 新增SNI
+    sni: ${e.sni.value}`; // 新增SNI
       }).join("\n\n");
       
       clashYaml = window.MIHOMO_MASQUE_TEMPLATE.replace(/^proxies:.*$/m, `proxies:\n${clashNodes}`);
@@ -79,7 +79,7 @@
     e.result.textContent=`masque://${e.endpointIp.value}:${e.endpointPort.value}?${params}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
     e.copyButton.disabled=false; e.hint.textContent="已完成转换，可以直接复制并导入 Shadowrocket。"; e.status.textContent="准备就绪"; e.status.classList.add("ready");
     const clashDns=e.dns.value.split(/[\s,]+/).filter(Boolean).join(", ");
-    clashYaml=window.MIHOMO_MASQUE_TEMPLATE.replace(/^(\s{4}server:)\s*.*$/m,`$1 ${e.endpointIp.value}`).replace(/^(\s{4}port:)\s*.*$/m,`$1 ${e.endpointPort.value}`).replace(/^(\s{4}private-key:)\s*.*$/m,`$1 ${config.private_key.trim()}`).replace(/^(\s{4}public-key:)\s*.*$/m,`$1 ${pemBody(config.endpoint_pub_key)}`).replace(/^(\s{4}ip:)\s*.*$/m,`$1 ${e.tunnelIp.value}`).replace(/^(\s{4}udp:)\s*.*$/m,`$1 ${udpEnabled}`).replace(/^(\s{4}remote-dns-resolve:)\s*.*$/m,"$1 true").replace(/^(\s{4}dns:)\s*.*$/m,`$1 [ ${clashDns} ]`);
+    clashYaml=window.MIHOMO_MASQUE_TEMPLATE.replace(/^(\s{4}server:)\s*.*$/m,`$1 ${e.endpointIp.value}`).replace(/^(\s{4}port:)\s*.*$/m,`$1 ${e.endpointPort.value}`).replace(/^(\s{4}private-key:)\s*.*$/m,`$1 ${config.private_key.trim()}`).replace(/^(\s{4}public-key:)\s*.*$/m,`$1 ${pemBody(config.endpoint_pub_key)}`).replace(/^(\s{4}ip:)\s*.*$/m,`$1 ${e.tunnelIp.value}`).replace(/^(\s{4}udp:)\s*.*$/m,`$1 ${udpEnabled}`).replace(/^(\s{4}remote-dns-resolve:)\s*.*$/m,"$1 true").replace(/^(\s{4}dns:)\s*.*$/m,`$1 [ ${clashDns} ]\n    sni: ${e.sni.value}`);
     e.yamlPreview.textContent=clashYaml; e.downloadYamlButton.disabled=false; e.clashHint.textContent="已套用目前 Endpoint 与 usque 密钥，可直接下载并导入 Clash。"; e.clashStatus.textContent="准备就绪"; e.clashStatus.classList.add("ready");
   }
   async function load(file) {
@@ -102,6 +102,7 @@
   e.dropZone.addEventListener("drop",(x)=>{x.preventDefault();e.dropZone.classList.remove("dragging");load(x.dataTransfer.files[0])});
   e.udp.addEventListener("click",()=>{udpEnabled=!udpEnabled;e.udp.classList.toggle("on",udpEnabled);e.udp.setAttribute("aria-checked",String(udpEnabled));generate()});
   [e.dns,e.cc,e.flag,e.name].forEach((x)=>x.addEventListener("input",generate));
+  e.sni.addEventListener("change", generate);
   e.copyButton.addEventListener("click",async()=>{await navigator.clipboard.writeText(e.result.textContent);const old=e.copyButton.innerHTML;e.copyButton.innerHTML="✓<br><strong>已复制</strong>";setTimeout(()=>e.copyButton.innerHTML=old,1500)});
   e.downloadYamlButton.addEventListener("click",()=>{if(!clashYaml)return;const blob=new Blob([clashYaml],{type:"application/yaml;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Mihomo-Masque.yaml";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 })();

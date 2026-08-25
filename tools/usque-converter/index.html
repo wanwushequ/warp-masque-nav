@@ -28,7 +28,7 @@
         <div class="form">
           <label for="endpointIp">Cloudflare IPv4 端点</label>
           <select id="endpointIp">
-		    <option value="all" selected>多IP自动选择_20260825 (默认)</option>
+		    <option value="all" selected>多IP自动选择_20260825 (推荐)</option>
 		    <option value="162.159.198.2">162.159.198.2 (主要IP)</option>
 			<option value="162.159.199.2">162.159.199.2 (备用IP)</option>
 			<option value="masque.bestcf.eu.cc">masque.bestcf.eu.cc (测试)</option>
@@ -39,7 +39,7 @@
           </select>
           <label for="endpointPort">Cloudflare IPv4 端口</label>
           <select id="endpointPort">
-            <option value="443" selected>443 (默认)</option>
+            <option value="443" selected>443 (推荐)</option>
 			<option value="8443">8443</option>
 			<option value="500">500</option>
             <option value="1701">1701</option>
@@ -47,6 +47,37 @@
             <option value="4443">4443</option>
             <option value="8095">8095</option>
           </select>
+		<label for="sni">SNI伪装</label>
+		<select id="sni">
+		  <option value="www.microsoft.com">微软 | www.microsoft.com (推荐)</option>
+		  <option value="www.apple.com">苹果 | www.apple.com (推荐)</option>
+		  <option value="www.bing.com">必应 | www.bing.com</option>
+		  <option value="www.lenovo.com">联想 | www.lenovo.com</option>
+		  <option value="www.hp.com">惠普 | www.hp.com</option>
+		  <option value="www.dell.com">戴尔 | www.dell.com</option>
+		  <option value="www.samsung.com">三星 | www.samsung.com</option>
+		  <option value="www.sony.com">索尼 | www.sony.com</option>
+		  <option value="www.nestle.com">雀巢 | www.nestle.com</option>
+		  <option value="www.ikea.com">宜家 | www.ikea.com</option>
+		  <option value="www.anta.com">安踏 | www.anta.com</option>
+		  <option value="www.lining.com">李宁 | www.lining.com</option>
+		  <option value="www.nike.com">耐克 | www.nike.com</option>
+		  <option value="www.adidas.com">阿迪 | www.adidas.com</option>
+		  <option value="www.allianz.com">安联 | www.allianz.com</option>
+		  <option value="www.nvidia.com">英伟达 | www.nvidia.com</option>
+		  <option value="www.amazon.com">亚马逊 | www.amazon.com</option>
+		  <option value="www.oracle.com">甲骨文 | www.oracle.com</option>
+		  <option value="www.kfc.com">肯德基 | www.kfc.com</option>
+		  <option value="www.mcdonalds.com">麦当劳 | www.mcdonalds.com</option>
+		  <option value="www.decathlon.com">迪卡侬 | www.decathlon.com</option>
+		  <option value="www.loreal.com">欧莱雅 | www.loreal.com</option>
+		  <option value="www.deepseek.com">深度求索 | www.deepseek.com</option>
+		  <option value="www.kimi.ai">月之暗面 | www.kimi.ai</option>
+		  <option value="www.unilever.com">联合利华 | www.unilever.com</option>
+		  <option value="www.luckincoffee.com">瑞幸咖啡 | www.luckincoffee.com</option>
+		  <option value="cdn.jsdelivr.net">CDN分发 | cdn.jsdelivr.net</option>
+		  <option value="www.cloudflare.com">Cloudflare | www.cloudflare.com</option>
+		</select>		  
           <label for="tunnelIp">内部 IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
           <label for="dns">DNS域名</label><input id="dns" value="1.1.1.1, 8.8.8.8, 1.0.0.1, 8.8.4.4">
           <label for="udp">UDP转发</label><button id="udp" class="toggle on" role="switch" aria-checked="true"><span></span></button>
@@ -71,11 +102,11 @@
       </div>
     </section>
     <div style="text-align: center; margin-top: 20px;">
-	  <p class="note" style="margin-bottom: 4px;">v1.1.5</p>
       <p class="note" style="margin-bottom: 4px;">文件内容不会上传或离开你的浏览器，链接包含私人密钥，请妥善保管</p>
-      <p class="note" style="margin-bottom: 4px;">Cloudflare WARP MASQUE 导航 - <a href="https://masque.pages.dev" target="_blank" style="color: var(--teal); text-decoration: none;">https://masque.pages.dev</a> - By KxK3lv1n</p>
+      <p class="note" style="margin-bottom: 4px;">Cloudflare WARP MASQUE 导航 - <a href="https://masque.pages.dev" target="_blank" style="color: var(--teal); text-decoration: none;">https://masque.pages.dev</a></p>
+	  <p class="note" style="margin-bottom: 4px;">v1.1.6 | Thanks KxK3lv1n</p>
     </div>
   </main>
-  <script src="yaml-template.js?v=082503"></script><script src="script.js?v=082505"></script>
+  <script src="yaml-template.js?v=0826"></script><script src="script.js?v=0826"></script>
 </body>
 </html>
