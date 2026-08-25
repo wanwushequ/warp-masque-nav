@@ -334,7 +334,8 @@
 					</div>
 					<button class="copy-btn" id="masqueCopyBtn" onclick="masqueCopyURL()">复制IP:端口</button>
 				</div>
-				<div class="item-desc">不建议新手修改默认端点，注意MASQUE与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通</div>
+				<div class="item-desc">不建议新手修改默认端点，注意MASQUE与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通；</div>
+				<div class="item-desc">部分客户端不支持域名的形式；部分地区使用备选效果更佳</div>
 			</div>
 			<script>function masqueCopyURL(){const ipSelect=document.getElementById("masqueIPSelect"),portSelect=document.getElementById("masquePortSelect"),copyBtn=document.getElementById("masqueCopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
 			<div class="group-card">
