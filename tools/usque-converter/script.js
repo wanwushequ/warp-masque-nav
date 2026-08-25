@@ -34,7 +34,7 @@
     
     // all 多节点逻辑
     if (e.endpointIp.value === "all") {
-      const allServers = ["162.159.198.2", "162.159.199.2", "masque.bestcf.eu.cc", "masque1.bestcf.eu.cc", "masque2.bestcf.eu.cc"];
+      const allServers = ["162.159.198.2", "162.159.199.2", "masque.bestcf.eu.cc", "masque1.bestcf.eu.cc", "masque2.bestcf.eu.cc", "162.159.198.1", "162.159.199.1"];
       const baseParams = [["publicKey",pemBody(config.endpoint_pub_key)],["privateKey",config.private_key.trim()],["ip",e.tunnelIp.value],["dns",e.dns.value.trim()],["udp",udpEnabled?"1":"0"],["cc",e.cc.value],["flag",e.flag.value.trim()]];
       const baseParamStr = baseParams.map(([k,v])=>`${k}=${enc(v)}`).join("&");
       
