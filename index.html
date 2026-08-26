@@ -306,13 +306,13 @@
 			</div>		
 			
 			<div class="group-card">
-				<div class="group-name">MASQUE Endpoint 端点IP:端口<span class="tag tag-featured">NEW</span></div>
+				<div class="group-name">MASQUE Endpoint IPv4 端点<span class="tag tag-featured">NEW</span></div>
 				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
 					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
-						<select id="masqueIPSelect" class="url-text"
+						<select id="masqueIPv4Select" class="url-text"
 							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
 							<option value="162.159.198.2" style="background-color: #f1f5f9; color: #000000;">162.159.198.2 (默认IP)</option>
-							<option value="162.159.198.2" style="background-color: #f1f5f9; color: #000000;">162.159.199.2 (备选IP)</option>
+							<option value="162.159.199.2" style="background-color: #f1f5f9; color: #000000;">162.159.199.2 (备选IP)</option>
 							<option value="masque.bestcf.eu.cc" style="background-color: #f1f5f9; color: #000000;">masque.bestcf.eu.cc (测试)</option>
 							<option value="masque1.bestcf.eu.cc" style="background-color: #f1f5f9; color: #000000;">masque1.bestcf.eu.cc (测试)</option>
 							<option value="masque2.bestcf.eu.cc" style="background-color: #f1f5f9; color: #000000;">masque2.bestcf.eu.cc (测试)</option>
@@ -321,7 +321,7 @@
 						</select>
 					</div>
 					<div class="url-box" style="flex: 1; min-width: 150px; padding: 0 10px;">
-						<select id="masquePortSelect" class="url-text"
+						<select id="masqueIPv4PortSelect" class="url-text"
 							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
 							<option value="443" style="background-color: #f1f5f9; color: #000000;">443 (默认端口)</option>
 							<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
@@ -332,12 +332,40 @@
 							<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095</option>
 						</select>
 					</div>
-					<button class="copy-btn" id="masqueCopyBtn" onclick="masqueCopyURL()">复制IP:端口</button>
+					<button class="copy-btn" id="masqueIPv4CopyBtn" onclick="masqueIPv4CopyURL()">复制IP:端口</button>
 				</div>
-				<div class="item-desc">不建议新手修改默认端点，注意MASQUE与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通；</div>
+				<div class="item-desc">不建议新手修改默认端点，注意masqueIPv4与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通；</div>
 				<div class="item-desc">部分客户端不支持域名的形式；部分地区使用备选效果更佳</div>
 			</div>
-			<script>function masqueCopyURL(){const ipSelect=document.getElementById("masqueIPSelect"),portSelect=document.getElementById("masquePortSelect"),copyBtn=document.getElementById("masqueCopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
+			<script>function masqueIPv4CopyURL(){const ipSelect=document.getElementById("masqueIPv4Select"),portSelect=document.getElementById("masqueIPv4PortSelect"),copyBtn=document.getElementById("masqueIPv4CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
+
+			<div class="group-card">
+				<div class="group-name">MASQUE Endpoint IPv6 端点<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<select id="masqueIPv6Select" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="[2606:4700:103::2]" style="background-color: #f1f5f9; color: #000000;">2606:4700:103::2 (默认IP)</option>
+							<option value="[2606:4700:104::2]" style="background-color: #f1f5f9; color: #000000;">2606:4700:104::2 (备选IP)</option>
+						</select>
+					</div>
+					<div class="url-box" style="flex: 1; min-width: 150px; padding: 0 10px;">
+						<select id="masqueIPv6PortSelect" class="url-text"
+							style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="443" style="background-color: #f1f5f9; color: #000000;">443 (默认端口)</option>
+							<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
+							<option value="500" style="background-color: #f1f5f9; color: #000000;">500</option>
+							<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
+							<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500</option>
+							<option value="4443" style="background-color: #f1f5f9; color: #000000;">4443</option>
+							<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="masqueIPv6CopyBtn" onclick="masqueIPv6CopyURL()">复制IP:端口</button>
+				</div>
+			</div>
+			<script>function masqueIPv6CopyURL(){const ipSelect=document.getElementById("masqueIPv6Select"),portSelect=document.getElementById("masqueIPv6PortSelect"),copyBtn=document.getElementById("masqueIPv6CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
+			
 			<div class="group-card">
 				<div class="group-name">自定义SNI域名合集<span class="tag">SNI伪装</span><span class="tag tag-featured">NEW</span></div>
 				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
