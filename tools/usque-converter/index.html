@@ -26,7 +26,7 @@
       <article class="card settings">
         <h2>第3步：设置</h2>
         <div class="form">
-          <label for="endpointIp">Cloudflare IPv4 端点</label>
+          <label for="endpointIp">端点 IPv4</label>
           <select id="endpointIp">
 		    <option value="all" selected>多端点自动选择-20260826 (推荐)</option>
 		    <option value="162.159.198.2">162.159.198.2 (主要IP)</option>
@@ -37,7 +37,7 @@
             <option value="162.159.198.1">162.159.198.1 (失效)</option>
             <option value="162.159.199.1">162.159.199.1 (失效)</option>
           </select>
-          <label for="endpointPort">Cloudflare IPv4 端口</label>
+          <label for="endpointPort">端口</label>
           <select id="endpointPort">
             <option value="443" selected>443 (推荐)</option>
 			<option value="8443">8443</option>
@@ -81,8 +81,8 @@
 		  <option value="www.cloudflare.com">Cloudflare | www.cloudflare.com</option>
 		  <option value="www.cloudflare.com">MASQUE | consumer-masque.cloudflareclient.com</option>
 		</select>		  
-          <label for="tunnelIp">Cloudflare 内部IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
-          <label for="dns">DNS</label><input id="dns" value="1.1.1.1, 8.8.8.8, 1.0.0.1, 8.8.4.4">
+          <label for="tunnelIp">内部IP</label><input id="tunnelIp" readonly placeholder="加载 JSON 后自动填入">
+          <label for="dns">DNS IPv4</label><input id="dns" value="1.1.1.1, 8.8.8.8, 1.0.0.1, 8.8.4.4">
 		<label for="cc">加速策略</label>
 		<select id="cc">
 		  <option value="bbr">性能模式 | BBR (推荐)</option>
