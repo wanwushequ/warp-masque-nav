@@ -51,20 +51,17 @@ jobs:
                   if response.status_code == 200:
                       data = response.json()
                       tag = data.get('tag_name', '')
-                      published_at = data.get('published_at', '') # UTC 时间格式: 2026-06-16T08:00:00Z
+                      published_at = data.get('published_at', '')
                       
                       if tag:
                           tag_lower = tag.lower()
                           if tag_lower.startswith('v'):
                               tag = tag[1:]
                       
-                      # 转换 UTC 时间为北京时间 (UTC+8)
                       bj_date_str = ""
                       if published_at:
                           try:
-                              # 解析 ISO 格式的 UTC 时间
                               utc_dt = datetime.strptime(published_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                              # 转换为北京时间
                               bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
                               bj_date_str = bj_dt.strftime("%Y-%m-%d")
                           except Exception as te:
@@ -96,7 +93,6 @@ jobs:
                       for line in f:
                           if '|' in line:
                               parts = line.strip().split('|')
-                              # 兼容旧格式或匹配新格式
                               if len(parts) >= 2:
                                   version_data[parts[0]] = {
                                       "ver": parts[1],
@@ -110,16 +106,28 @@ jobs:
               with open('index.html', 'r', encoding='utf-8') as f:
                   soup = BeautifulSoup(f, 'html.parser')
 
-              container = soup.find('section', id='khd')
-              if not container:
-                  print("Section #khd not found")
+              # 支持多个容器组
+              container_ids = ['khd', 'warp3', 'clash']
+              all_links = []
+              for cid in container_ids:
+                  container = soup.find('section', id=cid)
+                  if container:
+                      links = container.find_all('a', href=re.compile(r'github\.com/([^/]+)/([^/]+)'))
+                      all_links.extend(links)
+                      print(f"Found {len(links)} GitHub links in section #{cid}")
+                  else:
+                      print(f"Section #{cid} not found, skipping")
+              
+              if not all_links:
+                  print("No GitHub links found in any container")
                   return
 
-              links = container.find_all('a', href=re.compile(r'github\.com/([^/]+)/([^/]+)'))
               session = get_session()
               token = os.getenv('GH_TOKEN')
               
-              for link in links:
+              # 去重处理
+              seen = set()
+              for link in all_links:
                   href = link.get('href')
                   match = re.search(r'github\.com/([^/]+)/([^/]+)', href)
                   if match:
@@ -127,9 +135,13 @@ jobs:
                       repo = match.group(2).replace('.git', '').split('?')[0].split('#')[0]
                       repo_key = f"{owner}/{repo}"
                       
+                      if repo_key in seen:
+                          continue
+                      seen.add(repo_key)
+                      
                       if repo_key in ignore_list:
-                        print(f"Skipping ignored repository: {repo_key}")
-                        continue
+                          print(f"Skipping ignored repository: {repo_key}")
+                          continue
                       
                       print(f"Checking {repo_key}...")
                       new_version, new_date = get_latest_release(session, owner, repo, token)
