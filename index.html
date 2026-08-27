@@ -57,13 +57,26 @@
 	</style> 
 </head>
 <body id="bodyTop">
+<div class="bottom-nav-container">
+    <div class="nav-bar" id="bottomNav">
+        <div class="nav-indicator" id="indicator"></div>
+        <a href="#bodyTop" class="nav-item active">顶部</a>
+        <!-- <a href="#warp3" class="nav-item">三方</a> -->
+        <a href="#clash" class="nav-item">Clash</a>
+        <a href="#tools" class="nav-item">配套</a>
+        <a href="#jiaocheng" class="nav-item">教程</a>
+        <a href="#warp0" class="nav-item">原版</a>
+		<a href="#cfgf" class="nav-item">官方</a>
+        <a href="#others" class="nav-item">更多</a>
+    </div>  
+</div>
     <div class="container">
         <header>
             <h1>WARP MASQUE <span style="display: inline-block;">导航</span></h1>
 			<h1 id="dynamic-h1" style="font-size:1.25rem;font-weight:bold;margin-top:-12px;min-height:1.5em;">masque.pages.dev</h1>
         </header>
-        <section id="khd">
-            <h2>WARP 第三方</h2>
+        <section id="warp3">
+            <h2>WARP 分流</h2>
             <div class="group-card">
                 <div class="group-name">PC分流客户端</div>
                 <div class="link-row">
@@ -236,9 +249,10 @@
                     </div>
                 </div>				
 			</div>	
-
-            <div class="group-card">
-                <div class="group-name">MASQUE × Clash × 小火箭 专用<span class="tag tag-featured">NEW</span></div>			
+		<section id="clash">
+            <h2>Clash × MASQUE</h2>
+			<div class="group-card">
+                <div class="group-name">MASQUE 转 Clash .yaml</div>			
 				<div class="link-row">
                     <div class="item-header"><span class="item-title">Usque 转换器</span><span class="tag tag-featured">1.1.8</span><span class="tag tag-featured">推荐</span></div>
                     <div class="action-area">
@@ -253,6 +267,9 @@
                         <a href="https://masque.pages.dev/tools/usque-converter/Usque.zip" class="open-btn" target="_blank">立即下载</a>
                     </div>
                 </div>
+			</div>
+			<div class="group-card">
+                <div class="group-name">客户端</div>			
                 <div class="link-row">
                     <div class="item-header"><span class="item-title">Clash Verge Rev</span><span class="tag">Win/Mac/Linux</span></div>
                     <div class="action-area">
@@ -309,9 +326,12 @@
                         <div class="url-box"><span class="url-text">bestcf.pages.dev/#khd</span></div>
                         <a href="https://bestcf.pages.dev/#khd" class="open-btn" target="_blank">打开链接</a>
                     </div>
-                </div>				
+                </div>					
 			</div>		
-			
+        </section>	
+            
+		<section id="tools">
+			<h2>配套工具</h2>			
 			<div class="group-card">
 				<div class="group-name">MASQUE Endpoint 端点<span class="tag tag-featured">NEW</span></div>
 				<div class="link-row">
@@ -525,7 +545,7 @@
             <!-- </div>			 -->
         </section>
 		
-		<section id="Cloudflare">
+		<section id="warp0">
 			<h2>WARP 官方</h2>
 			<div class="group-card">
 				<div class="group-name">官网</div>
@@ -717,7 +737,7 @@
                 </div>
             </div>
         </section>		
-		<section id="more">
+		<section id="others">
             <h2>其它</h2>
 
             <div class="group-card">
@@ -733,7 +753,7 @@
         <footer>
             <span class="tips">Cloudflare WARP All in One<br>内容来自网络，免费使用，不提供节点<br>仅用于技术研究，24小时后请删除，禁止它用<br>
 				<!-- 请勿将本站分享到国内，可以私信给最要好的盆友<br> -->
-                2026-8-26 更新</span><br>
+                2026-8-27 更新</span><br>
             <a href="report/" class="footer-button" target="_blank">反馈 / 失效 / 纠错 / 投稿</a>
 			<!-- <br><br> -->
             <!-- <a href="https://www.youtube.com/@zhenxiangdinglv/posts" class="footer-button" target="_blank">交流讨论</a> -->
@@ -741,6 +761,10 @@
         </footer>
 
     </div>
+<!-- 底部导航 -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{const nav=document.getElementById('bottomNav'),indicator=document.getElementById('indicator'),items=document.querySelectorAll('.nav-item');function updateIndicator(el){if(!el)return;indicator.style.width=`${el.offsetWidth}px`;indicator.style.left=`${el.offsetLeft}px`;const scrollLeft=el.offsetLeft-(nav.offsetWidth/2)+(el.offsetWidth/2);nav.scrollTo({left:scrollLeft,behavior:'smooth'}); const isTopActive = el.innerText === '顶部' || el.innerText === '刷新';  items[0].innerText = (el === items[0]) ? '刷新' : '顶部';}updateIndicator(document.querySelector('.nav-item.active'));items.forEach((item,index)=>{item.addEventListener('click',function(e){if(index===0&&this.classList.contains('active')){window.location.href='/';return}e.preventDefault();const targetId=this.getAttribute('href'),targetElement=targetId==="#bodyTop"?document.body:document.querySelector(targetId);if(targetElement)targetElement.scrollIntoView({behavior:'smooth'})})});let isTicking=false;window.addEventListener('scroll',()=>{if(!isTicking){window.requestAnimationFrame(()=>{const scrollPos=window.scrollY+window.innerHeight/3;let currentActive=items[0];items.forEach(item=>{const id=item.getAttribute('href');if(id!=="#bodyTop"){const section=document.querySelector(id);if(section&&scrollPos>=section.offsetTop)currentActive=item}});if(!currentActive.classList.contains('active')){items.forEach(i=>i.classList.remove('active'));currentActive.classList.add('active');updateIndicator(currentActive)}isTicking=false});isTicking=true}},{passive:true})});
+</script>	
 </body>
 </html>
 <!-- 客户端版本号 -->
