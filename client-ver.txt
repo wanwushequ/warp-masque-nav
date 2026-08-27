@@ -2,7 +2,7 @@
 Abobo7/usque-android|1.0.3|2025-12-20
 CluvexStudio/Aether|1.7.0|2026-08-18
 Diniboy1123/usque|4.2.1|2026-07-20
-GeorgeXie2333/usque-app|0.2.0|2026-08-26
+GeorgeXie2333/usque-app|0.2.1|2026-08-27
 HynoR/uscf|1.0.1|2026-08-18
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.44|2026-08-16
