@@ -259,17 +259,17 @@
 			<div class="group-card">
                 <div class="group-name">MASQUE 转 Clash .yaml</div>			
 				<div class="link-row">
-                    <div class="item-header"><span class="item-title">Usque 转换器 网页版</span><span class="tag tag-featured">1.3.2</span><span class="tag">支持小火箭</span><span class="tag">IPv4/6</span><span class="tag tag-featured">推荐</span></div>
+                    <div class="item-header"><span class="item-title">Usque 转换器 网页版</span><span class="tag tag-featured">1.3.6</span><span class="tag">自定义配置</span><span class="tag">IPv4/6</span><span class="tag tag-featured">推荐</span></div>
                     <div class="action-area">
                         <div class="url-box"><span class="url-text">masque.pages.dev/tools/usque-converter/</span></div>
                         <a href="https://masque.pages.dev/tools/usque-converter/" class="open-btn" target="_blank">打开链接</a>
                     </div>
                 </div>
 				<div class="link-row">
-                    <div class="item-header"><span class="item-title">Usque 转换器 Win版</span><span class="tag tag-featured">20260828-2</span><span class="tag">双规则集</span><span class="tag">IPv4/6</span><span class="tag">随机端口</span><span class="tag tag-featured">NEW</span></div>
+                    <div class="item-header"><span class="item-title">Usque 转换器 Win版</span><span class="tag tag-featured">20260829</span><span class="tag">双规则集</span><span class="tag">IPv4/6</span><span class="tag">随机端口</span><span class="tag tag-featured">NEW</span></div>
                     <div class="action-area">
-                        <div class="url-box"><span class="url-text">masque.pages.dev/Masque-To-Clash_Win_20260828-2.zip</span></div>
-                        <a href="https://masque.pages.dev/Masque-To-Clash_Win_20260828-2.zip" class="open-btn" target="_blank">下载文件</a>
+                        <div class="url-box"><span class="url-text">masque.pages.dev/Masque-To-Clash_Win_20260829.zip</span></div>
+                        <a href="https://masque.pages.dev/Masque-To-Clash_Win_20260829.zip" class="open-btn" target="_blank">下载文件</a>
                     </div>
                 </div>
 				<div class="item-desc">当有新的版本，建议定期重新转换生成配置文件，以免与部分客户端不兼容</div>					
@@ -362,12 +362,12 @@
 							<select id="masqueIPv4PortSelect" class="url-text"
 								style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
 								<option value="443" style="background-color: #f1f5f9; color: #000000;">443 (默认端口)</option>
-								<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
-								<option value="500" style="background-color: #f1f5f9; color: #000000;">500</option>
-								<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
-								<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500</option>
+								<option value="500" style="background-color: #f1f5f9; color: #000000;">500 (推荐尝试)</option>
+								<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500 (推荐尝试)</option>
+								<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095 (推荐尝试)</option>
 								<option value="4443" style="background-color: #f1f5f9; color: #000000;">4443</option>
-								<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095</option>
+								<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
+								<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
 							</select>
 						</div>
 						<button class="copy-btn" id="masqueIPv4CopyBtn" onclick="masqueIPv4CopyURL()">复制IPv4</button>
@@ -390,19 +390,19 @@
 							<select id="masqueIPv6PortSelect" class="url-text"
 								style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
 								<option value="443" style="background-color: #f1f5f9; color: #000000;">443 (默认端口)</option>
-								<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
-								<option value="500" style="background-color: #f1f5f9; color: #000000;">500</option>
-								<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
-								<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500</option>
+								<option value="500" style="background-color: #f1f5f9; color: #000000;">500 (推荐尝试)</option>
+								<option value="4500" style="background-color: #f1f5f9; color: #000000;">4500 (推荐尝试)</option>
+								<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095 (推荐尝试)</option>
 								<option value="4443" style="background-color: #f1f5f9; color: #000000;">4443</option>
-								<option value="8095" style="background-color: #f1f5f9; color: #000000;">8095</option>
+								<option value="8443" style="background-color: #f1f5f9; color: #000000;">8443</option>
+								<option value="1701" style="background-color: #f1f5f9; color: #000000;">1701</option>
 							</select>
 						</div>
 						<button class="copy-btn" id="masqueIPv6CopyBtn" onclick="masqueIPv6CopyURL()">复制IPv6</button>
 					</div>
 				</div>
-				<div class="item-desc" style="margin-top: 2px;">不建议新手修改默认端点，注意masqueIPv4与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通；</div>
-				<div class="item-desc">部分客户端不支持域名的形式；部分地区使用备选效果更佳</div>	
+				<div class="item-desc" style="margin-top: 2px;">不建议新手修改默认端点，MASQUE与WireGuard的端点端口不完全重叠，串用WireGuard优选脚本会导致不通；</div>
+				<div class="item-desc">部分客户端仅支持输入IP不支持域名；部分端口在部分地区可能会被QoS限速，建议测试不同端口效果</div>	
 			</div>
 			<script>function masqueIPv4CopyURL(){const ipSelect=document.getElementById("masqueIPv4Select"),portSelect=document.getElementById("masqueIPv4PortSelect"),copyBtn=document.getElementById("masqueIPv4CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
 			<script>function masqueIPv6CopyURL(){const ipSelect=document.getElementById("masqueIPv6Select"),portSelect=document.getElementById("masqueIPv6PortSelect"),copyBtn=document.getElementById("masqueIPv6CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
