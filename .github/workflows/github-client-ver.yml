@@ -3,7 +3,7 @@ name: Update GitHub Client Versions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0,3,8,21 * * *"   # 北京时间 8:00, 11:00, 16:00, 次日 05:00
+    - cron: '0 * * * *'
 
 jobs:
   update-versions:
