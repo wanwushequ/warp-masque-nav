@@ -39,9 +39,10 @@
       const baseParamStr = baseParams.map(([k,v])=>`${k}=${enc(v)}`).join("&");
       
       // Shadowrocket: 多个masque://链接，换行分隔
-      const masqueUrls = allServers.map(server => 
-        `masque://${server}:${e.endpointPort.value}?${baseParamStr}#${enc(e.name.value.trim()||"WARP-MASQUE")}`
-      ).join("\n");
+		const masqueUrls = allServers.map(server => {
+		  const host = server.includes(':') ? `[${server}]` : server;
+		  return `masque://${host}:${e.endpointPort.value}?${baseParamStr}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
+		}).join("\n");
       e.result.textContent = masqueUrls;
       e.copyButton.disabled = false;
       e.hint.textContent = "已完成转换，可以直接复制并导入 Shadowrocket。";
@@ -81,7 +82,8 @@
     
     // 原有单节点逻辑
     const params = [["publicKey",pemBody(config.endpoint_pub_key)],["privateKey",config.private_key.trim()],["ip",e.tunnelIp.value],["dns",e.dns.value.trim()],["udp",udpEnabled?"1":"0"],["cc",e.cc.value],["flag",e.flag.value.trim()]].map(([k,v])=>`${k}=${enc(v)}`).join("&");
-    e.result.textContent=`masque://${e.endpointIp.value}:${e.endpointPort.value}?${params}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
+	const host = e.endpointIp.value.includes(':') ? `[${e.endpointIp.value}]` : e.endpointIp.value;
+	e.result.textContent=`masque://${host}:${e.endpointPort.value}?${params}#${enc(e.name.value.trim()||"WARP-MASQUE")}`;
     e.copyButton.disabled=false; e.hint.textContent="已完成转换，可以直接复制并导入 Shadowrocket。"; e.status.textContent="准备就绪"; e.status.classList.add("ready");
     const clashDns=e.dns.value.split(/[\s,]+/).filter(Boolean).join(", ");
     clashYaml=window.MIHOMO_MASQUE_TEMPLATE.replace(/^(\s{4}server:)\s*.*$/m,`$1 ${e.endpointIp.value}`).replace(/^(\s{4}port:)\s*.*$/m,`$1 ${e.endpointPort.value}`).replace(/^(\s{4}private-key:)\s*.*$/m,`$1 ${config.private_key.trim()}`).replace(/^(\s{4}public-key:)\s*.*$/m,`$1 ${pemBody(config.endpoint_pub_key)}`).replace(/^(\s{4}ip:)\s*.*$/m,`$1 ${e.tunnelIp.value}`).replace(/^(\s{4}udp:)\s*.*$/m,`$1 ${udpEnabled}`).replace(/^(\s{4}remote-dns-resolve:)\s*.*$/m,"$1 true").replace(/^(\s{4}congestion-controller:)\s*.*$/m, `$1 ${e.cc.value}`).replace(/^(\s{4}dns:)\s*.*$/m,`$1 [ ${clashDns} ]\n    sni: ${e.sni.value}`);
