@@ -19,7 +19,7 @@ mbm110/MSN-GUARD|1.6.1|2026-08-28
 mihomo-party-org/clash-party|2.0.2|2026-08-14
 nhubaotruong/usque-proxy|1.47|2026-08-27
 throneproj/Throne|1.2.4|2026-08-09
-velnox4827/saman-aether|1.4.0|2026-08-30
+velnox4827/saman-aether|20260830|2026-08-30
 vernesong/OpenClash|0.47.156|2026-08-10
 vernette/warpscout|0.15.0|2026-08-30
 wanwushequ/Masque-Extension-Pack|1.0.3|2026-08-30
