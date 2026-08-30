@@ -22,5 +22,5 @@ throneproj/Throne|1.2.4|2026-08-09
 velnox4827/saman-aether|1.4.0|2026-08-30
 vernesong/OpenClash|0.47.156|2026-08-10
 vernette/warpscout|0.15.0|2026-08-30
-wanwushequ/Masque-Extension-Pack|20260830|2026-08-30
+wanwushequ/Masque-Extension-Pack|1.0.3|2026-08-30
 xiaobaigroup/ClashBox|1.7.4|2026-04-02
