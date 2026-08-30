@@ -6,6 +6,7 @@ GeorgeXie2333/usque-app|0.2.1|2026-08-27
 HynoR/uscf|1.0.1|2026-08-18
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.44|2026-08-16
+QW-AI-Code/Aether|1.2.6-build.12|2026-08-21
 WhiteDNS/WhiteAestherMobile|1.2.5|2026-08-29
 ZethRise/Aethery|0.8.0|2026-08-14
 chen08209/FlClash|0.8.96|2026-08-17
