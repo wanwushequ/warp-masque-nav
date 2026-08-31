@@ -119,7 +119,7 @@ document.getElementById('quickRegisterBtn')?.addEventListener('click', async fun
     e.preventDefault();
     const btn = this;
     const originalText = btn.textContent;
-    btn.textContent = '⏳ 获取中...';
+    btn.textContent = '⏳ 注册中...';
     btn.disabled = true;
 
     try {
@@ -159,10 +159,9 @@ document.getElementById('quickRegisterBtn')?.addEventListener('click', async fun
             statusEl.style.color = 'var(--matrix-green)';
         }
 
-        btn.textContent = '✅ 已注册';
+        btn.textContent = '已注册 已拖放';
         setTimeout(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
+            btn.disabled = true;
         }, 2000);
 
     } catch (err) {
