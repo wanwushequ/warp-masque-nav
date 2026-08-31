@@ -52,7 +52,7 @@
       // Clash: 多个proxy节点
       const clashDns = e.dns.value.split(/[\s,]+/).filter(Boolean).join(", ");
       const clashNodes = allServers.map((server, index) => {
-        return `  - name: "MASQUE${index + 1} - 导航网 Masque.pages.dev"
+        return `  - name: "MASQUE${index + 1} - Masque.pages.dev"
     type: masque
     server: ${server}
     port: ${e.endpointPort.value}
