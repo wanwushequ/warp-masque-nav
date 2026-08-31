@@ -17,7 +17,7 @@ chen08209/FlClash|0.8.96|2026-08-17
 clash-verge-rev/clash-verge-rev|2.5.2|2026-07-20
 garthnet/usque-android-app|1.0.2|2026-05-10
 hamvex/AetherGUI|2.0.0|2026-08-19
-immaghzbad/AetherST|1.6.4-android|2026-08-31
+immaghzbad/AetherST|1.6.5-android|2026-08-31
 ircfspace/masque-plus|2.9.0|2025-11-01
 justinwoo280/usquebox|0.1.3|2026-08-10
 mbm110/MSN-GUARD|1.7.0|2026-08-30
