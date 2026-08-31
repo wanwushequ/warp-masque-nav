@@ -113,3 +113,58 @@
   e.copyButton.addEventListener("click",async()=>{await navigator.clipboard.writeText(e.result.textContent);const old=e.copyButton.innerHTML;e.copyButton.innerHTML="✓<br><strong>已复制</strong>";setTimeout(()=>e.copyButton.innerHTML=old,1500)});
   e.downloadYamlButton.addEventListener("click",()=>{if(!clashYaml)return;const blob=new Blob([clashYaml],{type:"application/yaml;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Mihomo-Masque.yaml";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 })();
+
+
+// 一键秒注册：请求 + 填充
+document.getElementById('quickRegisterBtn')?.addEventListener('click', async function(e) {
+    e.preventDefault();
+    const btn = this;
+    const originalText = btn.textContent;
+    btn.textContent = '⏳ 获取中...';
+    btn.disabled = true;
+
+    try {
+        const resp = await fetch('https://usque-register-server.pages.dev/claim?raw=true');
+        const data = await resp.json();
+
+        if (!data.success) {
+            alert('⚠️ ' + (data.message || '注册失败'));
+            btn.textContent = originalText;
+            btn.disabled = false;
+            return;
+        }
+
+        const jsonContent = JSON.stringify(data.content, null, 2);
+        const blob = new Blob([jsonContent], { type: 'application/json' });
+        const file = new File([blob], `${data.id}.json`, { type: 'application/json' });
+
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${data.id}.json`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+
+        const fileInput = document.getElementById('fileInput');
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+        fileInput.dispatchEvent(new Event('change'));
+
+        const statusEl = document.querySelector('#clashStatus') || document.getElementById('status');
+        if (statusEl) {
+            statusEl.textContent = '✅ 已自动加载';
+            statusEl.style.color = 'var(--matrix-green)';
+        }
+
+        btn.textContent = '✅ 已注册';
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 2000);
+
+    } catch (err) {
+        alert('❌ 网络错误，请稍后重试');
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+});
