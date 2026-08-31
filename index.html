@@ -591,22 +591,26 @@
 			<script>function warpSNICopyURL(){const e=document.getElementById("warpSNISelect"),t=document.getElementById("warpSNICopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("warpSNISelect");if(e&&e.options.length>0){e.selectedIndex=Math.floor(Math.random()*e.options.length)}}));</script>				
 
 			<div class="group-card">
-				<div class="group-name">远程 IPv4 DNS合集<span class="tag tag-featured">NEW</span></div>
+				<div class="group-name">远程 IPv4/6 DNS合集<span class="tag tag-featured">NEW</span></div>
 				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
 					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
 						<style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
 						<select id="publicDNSSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
 							<option value="1.1.1.1">CloudFlare | 1.1.1.1 | 私密/不过滤 (推荐)</option>
 							<option value="8.8.8.8">Google | 8.8.8.8 | 私密/不过滤 (推荐)</option>
-							<option value="9.9.9.9">Quad 9 | 9.9.9.9 | 私密/安全/防恶意 (推荐)</option>
+							<option value="9.9.9.9">Quad9 | 9.9.9.9 | 私密/安全/防恶意 (推荐)</option>
 							<option value="208.67.222.222">OpenDNS | 208.67.222.222 | 防恶意/可过滤</option>
 							<option value="199.85.126.20">诺顿DNS | 199.85.126.20 | 防恶意/集成杀软</option>
 							<option value="94.140.14.14">AdGuard | 94.140.14.14 | 去广告/隐私</option>
 							<option value="185.228.168.168">CleanBrowsing | 185.228.168.168 | 私密/安全/防成人</option>
-							<option value="77.88.8.7">Yandex DNS | 77.88.8.7 | 防恶意/俄罗斯常用</option>
+							<option value="77.88.8.7">Yandex DNS | 77.88.8.7 | 防恶意/毛子常用</option>
 							<option value="8.26.56.26">Comodo DNS | 8.26.56.26 | 防恶意</option>
-							<option value="1.0.0.1">Cloudflare备用 | 1.0.0.1 | 隐私/不过滤</option>
-							<option value="8.8.4.4">Google备用 | 8.8.4.4 | 私密/不过滤</option>
+							<option value="1.0.0.1">Cloudflare 备用 | 1.0.0.1 | 隐私/不过滤</option>
+							<option value="8.8.4.4">Google 备用 | 8.8.4.4 | 私密/不过滤</option>
+							<option value="149.112.112.112">Quad9 备用 | 149.112.112.112 | 私密/安全/防恶意</option>
+							<option value="2606:4700:4700::1111">CloudFlare IPv6 | 2606:4700:4700::1111 | 私密/不过滤</option>
+							<option value="2001:4860:4860::8888">Google IPv6 | 2001:4860:4860::8888 | 私密/不过滤</option>
+							<option value="2620:fe::fe">Quad9 IPv6 | 2620:fe::fe | 私密/安全/防恶意</option>
 						</select>
 					</div>
 					<button class="copy-btn" id="publicDNSCopyBtn" onclick="publicDNSCopyURL()">复制DNS</button>
