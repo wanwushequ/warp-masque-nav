@@ -615,6 +615,7 @@
 					</div>
 					<button class="copy-btn" id="publicDNSCopyBtn" onclick="publicDNSCopyURL()">复制DNS</button>
 				</div>
+				<div class="item-desc">另外直连DNS，优先阿里云223.5.5.5，腾讯生态比如游戏党用119.29.29.29</div>
 			</div>
 			<script>function publicDNSCopyURL(){const e=document.getElementById("publicDNSSelect"),t=document.getElementById("publicDNSCopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("publicDNSSelect");if(e&&e.options.length>0){e.selectedIndex=0}}));</script>
 								
