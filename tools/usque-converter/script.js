@@ -114,7 +114,6 @@
   e.downloadYamlButton.addEventListener("click",()=>{if(!clashYaml)return;const blob=new Blob([clashYaml],{type:"application/yaml;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Mihomo-Masque.yaml";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 })();
 
-
 // 一键秒注册：请求 + 填充
 document.getElementById('quickRegisterBtn')?.addEventListener('click', async function(e) {
     e.preventDefault();
@@ -134,13 +133,17 @@ document.getElementById('quickRegisterBtn')?.addEventListener('click', async fun
             return;
         }
 
+        // ✅ 修复：统一处理文件名，去掉原有的 .json 后缀再拼接
+        const baseName = data.id.replace(/\.json$/i, '');
+        const fileName = `${baseName}.json`;
+
         const jsonContent = JSON.stringify(data.content, null, 2);
         const blob = new Blob([jsonContent], { type: 'application/json' });
-        const file = new File([blob], `${data.id}.json`, { type: 'application/json' });
+        const file = new File([blob], fileName, { type: 'application/json' });
 
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = `${data.id}.json`;
+        a.download = fileName;
         a.click();
         URL.revokeObjectURL(a.href);
 
