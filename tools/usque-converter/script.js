@@ -119,7 +119,7 @@ document.getElementById('quickRegisterBtn')?.addEventListener('click', async fun
     e.preventDefault();
     const btn = this;
     const originalText = btn.textContent;
-    btn.textContent = '⏳ 注册中...';
+    btn.textContent = '正在注册WARP MASQUE账号...';
     btn.disabled = true;
 
     try {
