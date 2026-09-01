@@ -11,7 +11,7 @@ MetaCubeX/ClashX.Meta|1.4.44|2026-08-16
 MetaCubeX/mihomo|1.19.30|2026-08-16
 QW-AI-Code/Aether|1.2.7-build.13|2026-09-01
 WhiteDNS/WhiteAesther|1.6.0|2026-08-28
-WhiteDNS/WhiteAestherMobile|1.2.5|2026-08-29
+WhiteDNS/WhiteAestherMobile|1.2.6|2026-09-02
 ZethRise/Aethery|0.8.0|2026-08-14
 chen08209/FlClash|0.8.96|2026-08-17
 clash-verge-rev/clash-verge-rev|2.5.2|2026-07-20
