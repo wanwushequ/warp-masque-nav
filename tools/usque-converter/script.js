@@ -159,7 +159,7 @@ document.getElementById('quickRegisterBtn')?.addEventListener('click', async fun
             statusEl.style.color = 'var(--matrix-green)';
         }
 
-        btn.textContent = '已注册 已拖放';
+        btn.textContent = '已注册 已下载 已拖放';
         setTimeout(() => {
             btn.disabled = true;
         }, 2000);
