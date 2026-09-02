@@ -1,6 +1,6 @@
 0x676e67/vproxy|2.5.5|2025-11-16
 Abobo7/usque-android|1.0.3|2025-12-20
-BAzeRlok/CFWARP-OPENWRT|1.7.1|2026-09-02
+BAzeRlok/CFWARP-OPENWRT|1.7.4|2026-09-03
 CluvexStudio/Aether|1.8.0|2026-08-29
 Diniboy1123/usque|4.2.1|2026-07-20
 GeorgeXie2333/usque-app|0.2.3|2026-09-01
@@ -14,7 +14,7 @@ QW-AI-Code/Aether|1.2.7-build.13|2026-09-01
 Vincent-bin/masque-server|0.13.0|2026-09-02
 WhiteDNS/WhiteAesther|1.6.0|2026-08-28
 WhiteDNS/WhiteAestherMobile|1.2.7|2026-09-02
-ZethRise/Aethery|0.8.0|2026-08-14
+ZethRise/Aethery|0.9.0|2026-09-03
 chen08209/FlClash|0.8.96|2026-08-17
 clash-verge-rev/clash-verge-rev|2.5.2|2026-07-20
 garthnet/usque-android-app|1.0.2|2026-05-10
