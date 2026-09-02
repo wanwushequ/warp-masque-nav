@@ -25,9 +25,10 @@ mbm110/MSN-GUARD|1.7.0|2026-08-30
 mihomo-party-org/clash-party|2.0.2|2026-08-14
 mp0rta/mqvpn|0.16.2|2026-08-26
 nhubaotruong/usque-proxy|1.47|2026-08-27
+openwarpkit/warpscout-android|android-v1.4.0|2026-09-02
 shtorm-7/sing-box-extended|1.13.18-extended-2.6.5|2026-08-12
 throneproj/Throne|1.2.4|2026-08-09
-vcarus/volto|0.8.0|2026-09-02
+vcarus/volto|0.8.1|2026-09-02
 velnox4827/saman-aether|1.5.0|2026-09-01
 vernesong/OpenClash|0.47.156|2026-08-10
 vernette/warpscout|0.15.0|2026-08-30
