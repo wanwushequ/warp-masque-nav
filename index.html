@@ -565,7 +565,7 @@
 					</div>
 				</div>
 				<div class="item-desc">部分客户端仅支持输入IP不支持域名；某些端口在某些地区/某些时间段可能会被QoS限速，建议测试不同端口效果</div>
-				<div class="item-desc">不建议新手修改默认端点，MASQUE与WireGuard/ZeroTrust的端点端口不完全重叠，串用会导致无法连接！</div>				
+				<div class="item-desc">不建议新手修改默认端点，MASQUE与WireGuard/ZeroTrust/EDT的IP端口不完全重叠，串用会导致无法连接！</div>				
 			</div>
 			<script>function masqueIPv4CopyURL(){const ipSelect=document.getElementById("masqueIPv4Select"),portSelect=document.getElementById("masqueIPv4PortSelect"),copyBtn=document.getElementById("masqueIPv4CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
 			<script>function masqueIPv6CopyURL(){const ipSelect=document.getElementById("masqueIPv6Select"),portSelect=document.getElementById("masqueIPv6PortSelect"),copyBtn=document.getElementById("masqueIPv6CopyBtn");if(ipSelect&&portSelect&&copyBtn){const ip=ipSelect.value,port=portSelect.value,fullAddress=ip+":"+port,textarea=document.createElement("textarea");textarea.value=fullAddress,document.body.appendChild(textarea),textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="成功复制",setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>			
