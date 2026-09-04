@@ -1,9 +1,9 @@
 0x676e67/vproxy|2.5.5|2025-11-16
 Abobo7/usque-android|1.0.3|2025-12-20
-BAzeRlok/CFWARP-OPENWRT|2.0.1|2026-09-03
+BAzeRlok/CFWARP-OPENWRT|3.0.0|2026-09-04
 CluvexStudio/Aether|1.8.0|2026-08-29
 Diniboy1123/usque|4.2.1|2026-07-20
-GeorgeXie2333/usque-app|0.2.3|2026-09-01
+GeorgeXie2333/usque-app|0.2.4|2026-09-04
 HynoR/uscf|1.0.1|2026-08-18
 Leadaxe/LxBox|2.22.0|2026-09-04
 Leadaxe/sing-box-lx|1.14.0-lx.29|2026-08-27
@@ -29,7 +29,7 @@ nhubaotruong/usque-proxy|1.47|2026-08-27
 openwarpkit/warpscout-android|android-v1.4.0|2026-09-02
 shtorm-7/sing-box-extended|1.13.18-extended-2.6.5|2026-08-12
 throneproj/Throne|1.2.4|2026-08-09
-vcarus/volto|0.9.2|2026-09-03
+vcarus/volto|0.9.3|2026-09-04
 velnox4827/saman-aether|1.5.0|2026-09-01
 vernesong/OpenClash|0.47.156|2026-08-10
 vernette/warpscout|0.15.0|2026-08-30
