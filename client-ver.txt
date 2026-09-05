@@ -14,7 +14,7 @@ QW-AI-Code/Aether|1.2.8-build.14|2026-09-03
 Vincent-bin/masque-server|0.13.0|2026-09-02
 WhiteDNS/WhiteAesther|1.7.1|2026-09-02
 WhiteDNS/WhiteAestherMobile|1.3.0|2026-09-02
-ZethRise/Aethery|0.9.0|2026-09-03
+ZethRise/Aethery|1.0.0|2026-09-06
 chen08209/FlClash|0.8.96|2026-08-17
 clash-verge-rev/clash-verge-rev|2.5.2|2026-07-20
 garthnet/usque-android-app|1.0.2|2026-05-10
