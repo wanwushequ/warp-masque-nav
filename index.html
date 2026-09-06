@@ -712,51 +712,51 @@
 			</div>
 			<script>function publicDNSCopyURL(){const e=document.getElementById("publicDNSSelect"),t=document.getElementById("publicDNSCopyBtn");if(e&&t&&e.value){const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}}document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("publicDNSSelect");if(e&&e.options.length>0){e.selectedIndex=0}}));</script>
 
-<div class="group-card">
-    <div class="group-name">远程 DoH加密DNS 国外网站解析<span class="tag tag-featured">NEW</span></div>
-    <div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
-            <style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
-            <select id="dohInternationalSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
-                <option value="https://dns.cloudflare.com/dns-query">Cloudflare | https://dns.cloudflare.com/dns-query | 私密/不过滤 (推荐)</option>
-                <option value="https://dns.google/dns-query">Google | https://dns.google/dns-query | 私密/不过滤 (推荐)</option>
-                <option value="https://dns.quad9.net/dns-query">Quad9 | https://dns.quad9.net/dns-query | 私密/安全/防恶意 (推荐)</option>
-                <option value="https://doh.opendns.com/dns-query">OpenDNS | https://doh.opendns.com/dns-query | 防恶意/可过滤</option>
-                <option value="https://doh.adguard.com/dns-query">AdGuard | https://doh.adguard.com/dns-query | 去广告/隐私保护</option>
-                <option value="https://doh.cleanbrowsing.org/doh/family-filter">CleanBrowsing (家庭) | https://doh.cleanbrowsing.org/doh/family-filter | 防成人/安全</option>
-                <option value="https://doh.cleanbrowsing.org/doh/security-filter">CleanBrowsing (安全) | https://doh.cleanbrowsing.org/doh/security-filter | 防恶意/轻过滤</option>
-                <option value="https://dns.bit.dance/dns-query">DNS.Bit | https://dns.bit.dance/dns-query | 隐私/无日志</option>
-                <option value="https://doh.dns.sb/dns-query">DNS.SB | https://doh.dns.sb/dns-query | 隐私/备用</option>
-                <option value="https://dns.twnic.tw/dns-query">TWNIC | https://dns.twnic.tw/dns-query | 台湾节点/低延迟</option>
-            </select>
-        </div>
-        <button class="copy-btn" id="dohInternationalCopyBtn" onclick="dohInternationalCopyURL()">复制DoH</button>
-    </div>
-    <div class="item-desc">国际主流DoH，加密防劫持，适合访问外网/全球站点；首选 Cloudflare 或 Google，注重安全用 Quad9</div>
-</div>
-<script>
-function dohInternationalCopyURL(){const e=document.getElementById("dohInternationalSelect"),t=document.getElementById("dohInternationalCopyBtn");if(!e||!t||!e.value)return;const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("dohInternationalSelect");e&&e.options.length>0&&(e.selectedIndex=0)});
-</script>
+			<div class="group-card">
+				<div class="group-name">远程 DoH加密DNS 国外网站解析<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
+						<select id="dohInternationalSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="https://dns.cloudflare.com/dns-query">Cloudflare | https://dns.cloudflare.com/dns-query | 私密/不过滤 (推荐)</option>
+							<option value="https://dns.google/dns-query">Google | https://dns.google/dns-query | 私密/不过滤 (推荐)</option>
+							<option value="https://dns.quad9.net/dns-query">Quad9 | https://dns.quad9.net/dns-query | 私密/安全/防恶意 (推荐)</option>
+							<option value="https://doh.opendns.com/dns-query">OpenDNS | https://doh.opendns.com/dns-query | 防恶意/可过滤</option>
+							<option value="https://doh.adguard.com/dns-query">AdGuard | https://doh.adguard.com/dns-query | 去广告/隐私保护</option>
+							<option value="https://doh.cleanbrowsing.org/doh/family-filter">CleanBrowsing (家庭) | https://doh.cleanbrowsing.org/doh/family-filter | 防成人/安全</option>
+							<option value="https://doh.cleanbrowsing.org/doh/security-filter">CleanBrowsing (安全) | https://doh.cleanbrowsing.org/doh/security-filter | 防恶意/轻过滤</option>
+							<option value="https://dns.bit.dance/dns-query">DNS.Bit | https://dns.bit.dance/dns-query | 隐私/无日志</option>
+							<option value="https://doh.dns.sb/dns-query">DNS.SB | https://doh.dns.sb/dns-query | 隐私/备用</option>
+							<option value="https://dns.twnic.tw/dns-query">TWNIC | https://dns.twnic.tw/dns-query | 台湾节点/低延迟</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="dohInternationalCopyBtn" onclick="dohInternationalCopyURL()">复制DoH</button>
+				</div>
+				<div class="item-desc">国际主流DoH，加密防劫持，适合访问外网/全球站点；首选 Cloudflare 或 Google，注重安全用 Quad9</div>
+			</div>
+			<script>
+			function dohInternationalCopyURL(){const e=document.getElementById("dohInternationalSelect"),t=document.getElementById("dohInternationalCopyBtn");if(!e||!t||!e.value)return;const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("dohInternationalSelect");e&&e.options.length>0&&(e.selectedIndex=0)});
+			</script>
 
-<div class="group-card">
-    <div class="group-name">国内直连 DoH 国内网站解析<span class="tag tag-featured">NEW</span></div>
-    <div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
-        <div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
-            <style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
-            <select id="dohChinaSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
-                <option value="https://dns.alidns.com/dns-query">阿里云 | https://dns.alidns.com/dns-query | 国内直连/低延迟 (推荐)</option>
-                <option value="https://doh.pub/dns-query">DNSPod (腾讯) | https://doh.pub/dns-query | 腾讯生态/游戏党优选</option>
-                <option value="https://doh.360.cn/dns-query">360 | https://doh.360.cn/dns-query | 防钓鱼/国内节点稳</option>
-                <option value="https://dns.nextdns.io">NextDNS (国内节点) | https://dns.nextdns.io | 可自定义/有国内中转</option>
-            </select>
-        </div>
-        <button class="copy-btn" id="dohChinaCopyBtn" onclick="dohChinaCopyURL()">复制DoH</button>
-    </div>
-    <div class="item-desc">国内厂商DoH，延迟低、解析快，适合国内网站/游戏/APP；阿里云首选，腾讯DNSPod适合游戏生态，360防钓鱼</div>
-</div>
-<script>
-function dohChinaCopyURL(){const e=document.getElementById("dohChinaSelect"),t=document.getElementById("dohChinaCopyBtn");if(!e||!t||!e.value)return;const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("dohChinaSelect");e&&e.options.length>0&&(e.selectedIndex=0)});
-</script>
+			<div class="group-card">
+				<div class="group-name">国内直连 DoH 国内网站解析<span class="tag tag-featured">NEW</span></div>
+				<div class="action-area" style="gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
+						<style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
+						<select id="dohChinaSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
+							<option value="https://dns.alidns.com/dns-query">阿里云 | https://dns.alidns.com/dns-query | 国内直连/低延迟 (推荐)</option>
+							<option value="https://doh.pub/dns-query">DNSPod (腾讯) | https://doh.pub/dns-query | 腾讯生态/游戏党优选</option>
+							<option value="https://doh.360.cn/dns-query">360 | https://doh.360.cn/dns-query | 防钓鱼/国内节点稳</option>
+							<option value="https://dns.nextdns.io">NextDNS (国内节点) | https://dns.nextdns.io | 可自定义/有国内中转</option>
+						</select>
+					</div>
+					<button class="copy-btn" id="dohChinaCopyBtn" onclick="dohChinaCopyURL()">复制DoH</button>
+				</div>
+				<div class="item-desc">国内厂商DoH，延迟低、解析快，适合国内网站/游戏/APP；阿里云首选，腾讯DNSPod适合游戏生态，360防钓鱼</div>
+			</div>
+			<script>
+			function dohChinaCopyURL(){const e=document.getElementById("dohChinaSelect"),t=document.getElementById("dohChinaCopyBtn");if(!e||!t||!e.value)return;const n=document.createElement("textarea");n.value=e.value,document.body.appendChild(n),n.select();try{if(document.execCommand("copy")){const e=t.innerText;t.innerText="成功复制",setTimeout(()=>{t.innerText=e},1500)}}catch(e){console.error(e)}finally{document.body.removeChild(n)}}document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("dohChinaSelect");e&&e.options.length>0&&(e.selectedIndex=0)});
+			</script>
 
 								
 			<div class="group-card">
