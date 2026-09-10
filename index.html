@@ -759,12 +759,12 @@
 					<div class="url-box" style="flex: 1; min-width: 200px; padding: 0 10px;">
 						<style>.url-text option { background-color: #f1f5f9; color: #000000; padding: 4px 8px; }</style>
 						<select id="latencyTestSelect" class="url-text" style="width: 100%; background: transparent; border: none; outline: none; cursor: pointer; color: var(--text-main);">
-							<option value="https://cp.cloudflare.com/generate_204">官方 | cp.cloudflare.com/generate_204</option>
-							<option value="https://connectivity.cloudflareclient.com/cdn-cgi/trace">官方 | connectivity.cloudflareclient.com/cdn-cgi/trace</option>
-							<option value="https://speed.cloudflare.com/meta">官方 | speed.cloudflare.com/meta</option>
-							<option value="https://cloudflare.com/cdn-cgi/trace">官方 | cloudflare.com/cdn-cgi/trace</option>
-							<!-- <option value="https://www.gstatic.com/generate_204">谷歌 | www.gstatic.com/generate_204</option> -->
-							<option value="http://latency-test.skk.moe/endpoint">Sukka | latency-test.skk.moe/endpoint</option>
+							<option value="https://cp.cloudflare.com/generate_204" selected>https://cp.cloudflare.com/generate_204 (默认)</option>
+							<option value="https://cloudflare.com/cdn-cgi/trace">https://cloudflare.com/cdn-cgi/trace</option>
+							<option value="https://cp.cloudflare.com">https://cp.cloudflare.com</option>
+							<option value="https://connectivity.cloudflareclient.com/cdn-cgi/trace">https://connectivity.cloudflareclient.com/cdn-cgi/trace</option>
+							<option value="https://speed.cloudflare.com/meta">https://speed.cloudflare.com/meta</option>
+							<option value="http://latency-test.skk.moe/endpoint">http://latency-test.skk.moe/endpoint</option>
 						</select>
 					</div>
 					<button class="copy-btn" id="latencyTestCopyBtn" onclick="latencyTestCopyURL()">复制链接</button>
