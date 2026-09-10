@@ -15,7 +15,7 @@ Vincent-bin/masque-server|0.13.0|2026-09-02
 WhiteDNS/WhiteAesther|1.8.0|2026-09-09
 WhiteDNS/WhiteAestherMobile|1.4.2|2026-09-09
 ZethRise/Aethery|1.0.0|2026-09-06
-chen08209/FlClash|0.8.96|2026-08-17
+chen08209/FlClash|0.8.97|2026-09-10
 clash-verge-rev/clash-verge-rev|2.5.2|2026-07-20
 garthnet/usque-android-app|1.0.2|2026-05-10
 hamvex/AetherGUI|2.0.0|2026-08-19
