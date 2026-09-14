@@ -81,7 +81,7 @@
 			<div class="notice-mini-card">
                 <b style="color: var(--text-main); margin-right: 8px;">最近更新</b>
                 <!-- <span style="color: var(--border-color); margin: 0 8px;">|</span> -->
-                <div class="notice-list"><span>MASQUE To Clash 转换器 v5.0</span><span>端点更新</span><span>Zero Trust 注册脚本</span><span>MASQUE一键注册网页版</span><span>MASQUE扩展包</span></div>
+                <div class="notice-list"><span>Zero Trust 分流方案</span><span>MASQUE To Clash 转换器 v5.0</span><span>端点更新</span><span>Zero Trust 注册脚本</span><span>MASQUE扩展包</span></div>
             </div>			
             <div class="group-card">
                 <div class="group-name">PC分流客户端 × 自定义多内核</div>
@@ -1047,7 +1047,15 @@
 				<div class="item-desc">下拉选择操作，下方会显示完整命令，点击"复制命令"按钮，然后打开终端(管理员)，粘贴命令并回车执行</div>
 			</div>
 			<script>document.addEventListener("DOMContentLoaded",function(){const select=document.getElementById("warpCommandSelect");const display=document.getElementById("warpCommandDisplay");if(select&&display){display.textContent=select.value;select.addEventListener("change",function(){display.textContent=this.value})}});function warpCopyCommand(){const select=document.getElementById("warpCommandSelect");const copyBtn=document.getElementById("warpCopyBtn");if(select&&copyBtn){const command=select.value;const textarea=document.createElement("textarea");textarea.value=command;document.body.appendChild(textarea);textarea.select();try{if(document.execCommand("copy")){const originalText=copyBtn.innerText;copyBtn.innerText="已复制";setTimeout(()=>{copyBtn.innerText=originalText},1500)}}catch(err){console.error(err)}finally{document.body.removeChild(textarea)}}}</script>
-		
+            
+			<div class="group-card"> 
+                <div class="item-header"><span class="item-title">Zero Trust 分流</span><span class="tag tag-featured">NEW</span></div>
+				<div class="item-desc">自动同步中国大陆 IP 段与直连域名到分流隧道（Split Tunnels）</div>	
+                <div class="action-area">
+                    <div class="url-box"><span class="url-text">github.com/upbeat-backbone-bose/cf-zt-cn-split</span></div>
+                    <a href="https://github.com/upbeat-backbone-bose/cf-zt-cn-split" class="open-btn" target="_blank">打开链接</a>
+                </div>
+            </div>			
 		</section>			
 		
 		<section id="cfgf">
