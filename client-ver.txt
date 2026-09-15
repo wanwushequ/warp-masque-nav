@@ -6,7 +6,7 @@ Diniboy1123/usque|4.2.1|2026-07-20
 GeorgeXie2333/usque-app|0.2.7|2026-09-15
 HynoR/uscf|1.0.1|2026-08-18
 Leadaxe/LxBox|2.24.0|2026-09-15
-Leadaxe/sing-box-lx|1.14.0-lx.39|2026-09-14
+Leadaxe/sing-box-lx|1.14.1-lx.1|2026-09-16
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.45|2026-09-14
 MetaCubeX/mihomo|1.19.31|2026-09-14
