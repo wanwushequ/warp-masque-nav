@@ -3,9 +3,9 @@ Abobo7/usque-android|1.0.3|2025-12-20
 BAzeRlok/CFWARP-OPENWRT|3.0.0|2026-09-04
 CluvexStudio/Aether|2.0.0|2026-09-13
 Diniboy1123/usque|4.2.1|2026-07-20
-GeorgeXie2333/usque-app|0.2.6|2026-09-11
+GeorgeXie2333/usque-app|0.2.7|2026-09-15
 HynoR/uscf|1.0.1|2026-08-18
-Leadaxe/LxBox|2.23.2|2026-09-14
+Leadaxe/LxBox|2.24.0|2026-09-15
 Leadaxe/sing-box-lx|1.14.0-lx.39|2026-09-14
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.45|2026-09-14
