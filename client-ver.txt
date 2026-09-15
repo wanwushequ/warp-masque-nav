@@ -10,7 +10,7 @@ Leadaxe/sing-box-lx|1.14.0-lx.39|2026-09-14
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.45|2026-09-14
 MetaCubeX/mihomo|1.19.31|2026-09-14
-QW-AI-Code/Aether|1.2.9-build.16|2026-09-09
+QW-AI-Code/Aether|1.3.0-build.19|2026-09-15
 Vincent-bin/masque-server|0.13.0|2026-09-02
 WhiteDNS/WhiteAesther|1.9.1|2026-09-12
 WhiteDNS/WhiteAestherMobile|1.6.1|2026-09-11
