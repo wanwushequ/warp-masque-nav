@@ -107,7 +107,7 @@ jobs:
                   soup = BeautifulSoup(f, 'html.parser')
 
               # 支持多个容器组
-              container_ids = ['khd', 'warp3', 'clash']
+              container_ids = ['khd', 'warp3', 'core', 'clash']
               all_links = []
               for cid in container_ids:
                   container = soup.find('section', id=cid)
