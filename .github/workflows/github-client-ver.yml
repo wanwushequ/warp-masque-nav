@@ -1,4 +1,4 @@
-name: Update GitHub Client Versions
+name: Update Client Versions
 
 on:
   workflow_dispatch:
