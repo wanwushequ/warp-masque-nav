@@ -5,7 +5,7 @@ CluvexStudio/Aether|2.1.0|2026-09-22
 Diniboy1123/usque|4.2.1|2026-07-20
 GeorgeXie2333/usque-app|0.2.7|2026-09-15
 HynoR/uscf|1.0.1|2026-08-18
-Leadaxe/LxBox|2.25.4|2026-09-25
+Leadaxe/LxBox|2.25.5|2026-09-26
 Leadaxe/sing-box-lx|1.14.2-lx.3|2026-09-25
 MatsuriDayo/nekoray|4.0.1|2024-12-12
 MetaCubeX/ClashX.Meta|1.4.45|2026-09-14
