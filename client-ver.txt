@@ -19,7 +19,9 @@ WhiteDNS/WhiteAestherMobile|1.10.0|2026-09-25
 Wiuvel/masqr|0.1.0|2026-09-18
 ZethRise/Aethery|1.0.0|2026-09-06
 chen08209/FlClash|0.8.98|2026-09-14
-clash-verge-rev/clash-verge-rev|2.5.5|2026-09-22
+clash-verge-rev/clash-verge-rev|2.5.6|2026-09-26
+feg55/Zarp|1.1.0|2026-09-25
+feg55/Zarp-Android|0.2.0|2026-09-25
 garthnet/usque-android-app|1.0.2|2026-05-10
 hamvex/AetherGUI|2.1.1|2026-09-14
 immaghzbad/AetherST|1.7.1-android|2026-09-15
